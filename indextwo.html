@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toggle Design Ideas</title>
+    <link rel="stylesheet" type="text/css" href="styletwo.css" />
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="indextwo.html">Page Two</a></li>
+        </ul>
+    </nav>
+    <div class="main">
+        <h2>REFACE</h2>
+        <p class="reface tab_headline">
+            Genesis RE<span>VIVE</span> kits are designed specifically to overlay RV cabinets and walls for a
+            fresh
+            look that’s
+            made to last.
+        </p>
+        <div class="icon_section four_col">
+            <div class="icon_card">
+                <img class="icon" src="https://genesisproductsinc.com/content/uploads/2023/07/Swatch_Green.png" />
+                <strong>ON-TREND DESIGN</strong>
+                <p> Choose from trending colors or beautifully detailed woodgrains</p>
+            </div>
+            <div class="icon_card">
+                <img class="icon"
+                    src="https://genesisproductsinc.com/content/uploads/2023/07/Revive-Installation_Green.png" />
+                <strong>EASY APPLICATIONS</strong>
+                <p> Peel & stick design for quick installation</p>
+            </div>
+            <div class="icon_card">
+                <img class="icon" src="https://genesisproductsinc.com/content/uploads/2021/04/icon-oem.png" />
+                <strong>SAVE TIME & MONEY</strong>
+                <p> No need for messy painting or costly rip & replace jobs</p>
+            </div>
+            <div class="icon_card">
+                <img class="icon"
+                    src="https://genesisproductsinc.com/content/uploads/2023/07/Quality-Stamp_Green.png" />
+                <strong>PRO ADHESIVE</strong>
+                <p> Withstands on-the-road conditions and resists bubbling to stick for the long haul</p>
+            </div>
+        </div>
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slide">
+                    <img src="http://genesisproductsinc.com/content/uploads/2024/01/Revive_Cab_BirchBrak.jpg"
+                        alt="Image 1" />
+                </div>
+                <div class="slide">
+                    <img src="http://genesisproductsinc.com/content/uploads/2024/01/Revive_Cab_BirchBark_Limbo.jpg"
+                        alt="Image 2" />
+                </div>
+            </div>
+            <div class="slider-arrows">
+                <div class="arrow left" onclick="navigateSlider(-1)">&#9665;</div>
+                <div class="arrow right" onclick="navigateSlider(1)">&#9655;</div>
+            </div>
+        </div>
+        <h4 class="toggle-headline">KITS</h4>
+        <div class="toggle-kits">
+            <div class="toggle-switch kits-switch" onclick="kitsSwitch(this)">
+                Cabinet
+            </div>
+            <div class="toggle-switch kits-switch" onclick="kitsSwitch(this)">
+                Wallboard
+            </div>
+            <div class="toggle-switch kits-switch" onclick="kitsSwitch(this)">
+                Ceiling
+            </div>
+        </div>
+        <h4 class="toggle-headline">COLLECTIONS</h4>
+        <div class="toggle-collections">
+            <div class="toggle-switch collections-switch" onclick="collectionsSwitch(this)">
+                Wood
+            </div>
+            <div class="toggle-switch collections-switch" onclick="collectionsSwitch(this)">
+                Smooth
+            </div>
+        </div>
+        <div class="color-swatches">
+            <div id="cabinet_wood-swatches">
+                <img class="swatch_collection"
+                    src="http://genesisproductsinc.com/content/uploads/2024/01/Revive_Cab_BirchBark_Swatch.jpg"
+                    alt="Birch" title="Birch" data-swatch-key="cabBirchBark" onclick="changeProductImage('cabBirchBark')" />
+                <img class="swatch_collection"
+                    src="http://genesisproductsinc.com/content/uploads/2024/01/Revive_Cab_BlondeWalnut_Swatch.jpg"
+                    alt="Blonde Walnut" title="Blonde Walnut" data-swatch-key="cabBlondeWalnut" onclick="changeProductImage('cabBlondeWalnut')" />
+                <img class="swatch_collection"
+                    src="http://genesisproductsinc.com/content/uploads/2024/01/Revive_Cab_GreenOak_Swatch.jpg"
+                    alt="Green Oak" title="Green Oak" data-swatch-key="cabGreenOak" onclick="changeProductImage('cabGreenOak')" />
+                <img class="swatch_collection"
+                    src="http://genesisproductsinc.com/content/uploads/2024/01/Revive_Cab_AlpineAsh_Swatch.jpg"
+                    alt="Alpine Ash" title="Alpine Ash" data-swatch-key="cabAlpineAsh" onclick="changeProductImage('cabAlpineAsh')" />
+            </div>
+            <div id="cabinet_smooth-swatches" style="display: none;">
+                <img class="swatch_collection" onclick="changeProductImage('cabDesginerWhite')"
+                    data-swatch-key="cabDesginerWhite"
+                    src="http://genesisproductsinc.com/content/uploads/2024/01/Revive_Cab_DesginerWhite_Swatch.jpg" />
+                <img class="swatch_collection" onclick="changeProductImage('cabStoneGray')"
+                    data-swatch-key="cabStoneGray"
+                    src="http://genesisproductsinc.com/content/uploads/2024/01/Revive_Cab_StoneGray_Swatch.jpg" />
+                <img class="swatch_collection" onclick="changeProductImage('cabMidnightBlue')"
+                    data-swatch-key="cabMidnightBlue"
+                    src="http://genesisproductsinc.com/content/uploads/2024/01/Revive_Cab_MidnightBlue_Swatch.jpg" />
+                <img class="swatch_collection" onclick="changeProductImage('cabMatteBlack')"
+                    data-swatch-key="cabMatteBlack"
+                    src="http://genesisproductsinc.com/content/uploads/2024/01/Revive_Cab_MatteBlack_Swatch.jpg" />
+            </div>
+            <div id="wallboard_linen-swatches" style="display: none;">
+                <img class="swatch_collection" onclick="changeProductImage('wallStructuredLinen')"
+                    data-swatch-key="wallStructuredLinen"
+                    src="http://genesisproductsinc.com/content/uploads/2024/01/Revive_Wall_StructuredLinen_Swatch.jpg" />
+            </div>
+            <div id="wallboard_wood-swatches" style="display: none;">
+                <img class="swatch_collection" data-swatch-key="wallStructuredLinen" onclick="changeProductImage('wallStructuredLinen')"
+                    data-swatch-key="wallStructuredLinen"
+                    src="http://genesisproductsinc.com/content/uploads/2024/01/Revive_Wall_StructuredLinen_Swatch.jpg" />
+            </div>
+            <div id="wallboard_smooth-swatches" style="display: none;"></div>
+            <div id="wallboard_specialty-swatches" style="display: none;"></div>
+            <div id="ceiling_textured-swatches" style="display: none;"></div>
+        </div>
+
+    </div>
+    <script src="scripttwo.js"></script>
+</body>
+
+</html>
