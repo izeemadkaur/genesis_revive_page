@@ -3,17 +3,71 @@ body {
   background-color: #ebebeb;
 }
 
+#gc_im .sticky-nav li {
+  list-style: none;
+}
+#gc_im .sticky-nav  {
+overflow-x: scroll;
+}
+
+
+#gc_im h2 {
+  font-family: proxima-nova, sans-serif;
+  font-size: 2.625rem;
+  font-weight: 700;
+  line-height: 2.75rem;
+  color: #78be21;
+}
+
+#gc_im .sticky-nav a {
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.15em;
+
+  display: inline-block;
+  position: relative;
+}
+
+#gc_im .sticky-nav a:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+#gc_im .sticky-nav a:hover:after {
+  width: 100%;
+  left: 0;
+}
+
+#gc_im .sticky-nav .nav-link.active:after {
+  width: 100%;
+  left: 0;
+}
+
+.slab_available_colors {
+  background-color: #eee;
+}
 
 .max-width {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-#reface, #replace, #refresh, #where-to-buy {
+#reface,
+#replace,
+#refresh,
+#where-to-buy {
   background: #fff;
   margin: 50px;
 }
-
 
 .tab_section {
   margin: 0 auto;
@@ -24,6 +78,12 @@ body {
 .tab {
   overflow: hidden;
   background-color: #78be21;
+  display: flex;
+  justify-content: center;
+}
+
+.tab li {
+  padding: 10px;
 }
 
 .tab a {
@@ -32,20 +92,10 @@ body {
   border: none;
   outline: none;
   cursor: pointer;
-  padding: 14px 16px;
   transition: 0.3s;
   font-size: 17px;
   color: #fff;
   text-transform: uppercase;
-}
-
-.tab a:hover {
-  background-color: #ddd;
-}
-
-.tab a.active {
-  background-color: #fff;
-  color: #000;
 }
 
 .tabcontent {
@@ -139,11 +189,17 @@ body {
   max-width: 800px;
 }
 
-.tooltip {
-  width: 100%;
+.backsplash_collection {
+  
 }
 
-.backsplash_selection, .collection_selection {
+.tooltip {
+  width: 100%;
+  font-family: Miller Text Bd, serif;
+}
+
+.backsplash_selection,
+.collection_selection {
   max-width: 800px;
 }
 
@@ -179,11 +235,14 @@ body {
   margin-top: 10px;
 }
 
-.kit_selection {
+.kit_selection,
+.backsplash_selection {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   grid-gap: 5px;
+  justify-content: space-around;
+  height: 100%;
 }
 
 label {
@@ -193,8 +252,6 @@ label {
 .collection {
   margin: 0;
 }
-
-
 
 .reface {
   margin-top: 0;
@@ -219,7 +276,6 @@ label {
 #refresh ul {
   list-style: disc;
   margin: 1rem 0;
-  padding: 0 0 0 24px;
 }
 
 #refresh li {
@@ -299,7 +355,7 @@ label {
 
   #replace .icon_section,
   #refresh .icon_section {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -311,9 +367,8 @@ label {
 .four_col_no_gap {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 10px ;
+  grid-gap: 10px;
 }
-
 
 select {
   width: 250px;
@@ -329,7 +384,8 @@ select {
   -moz-appearance: none;
   appearance: none;
   background-color: #eeeeef;
-  background-image: url("https://genesisproductsinc.com/content/themes/genesis/assets/images/select-arrow.svg"),linear-gradient(180deg,#eeeeef,#eeeeef);
+  background-image: url("https://genesisproductsinc.com/content/themes/genesis/assets/images/select-arrow.svg"),
+    linear-gradient(180deg, #eeeeef, #eeeeef);
   background-position: 100%;
   background-repeat: no-repeat;
   border: 1px solid #aaa;
@@ -339,13 +395,12 @@ select {
   min-width: 260px;
   overflow: hidden;
   padding: 10px 20px;
-  text-indent: .01px;
+  text-indent: 0.01px;
   text-overflow: ellipsis;
   text-overflow: "";
   -webkit-user-select: none;
   -moz-user-select: none;
   white-space: nowrap;
-
 }
 
 .full_page {
@@ -353,10 +408,9 @@ select {
   width: 100%;
 }
 
-
 .where_to_buy {
   text-align: center;
-  margin: 100px auto;
+  margin: 100px auto 20px auto;
 }
 
 .where_to_buy_btn {
@@ -365,7 +419,7 @@ select {
   background: transparent;
   border: none;
   outline: none;
-
+  color: #78be21;
 }
 
 .tooltip {
@@ -409,15 +463,13 @@ select {
 }
 
 .product_display_section {
-
-   background-color: #ebebeb;
-   padding: 50px;
+  background-color: #ebebeb;
+  padding: 50px;
 }
 
 .collection_selection {
   margin-top: 20px;
 }
-
 
 @media screen and (max-width: 768px) {
   .tab_headline {
@@ -426,13 +478,12 @@ select {
     margin-top: 5rem;
   }
 
-  #reface, #replace, #refresh, #where-to-buy {
+  #reface,
+  #replace,
+  #refresh,
+  #where-to-buy {
     margin: 50px 20px;
   }
-
-  /* .two_col_mobile {
-    grid-template-columns: 1fr 1fr;
-  } */
 
   #replace .two_col_mobile {
     grid-template-columns: 1fr 1fr;
@@ -444,3 +495,31 @@ select {
   margin-bottom: 0;
 }
 
+.swatch_collection {
+  border: 2px solid transparent;
+}
+
+.active_swatch {
+  border: 2px solid #78be21;
+}
+
+.select_swatch {
+  text-align: left;
+  margin: 10px 0;
+}
+.backsplash_selection .four_col_no_gap {
+  margin: 0;
+}
+
+.backsplash_selection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  grid-gap: 5px;
+  justify-content: center;
+  height: 100%;
+}
+
+.icon_card {
+  grid-gap: 20px;
+}

@@ -40,10 +40,35 @@ function setDefaultSwatch(collectionId) {
     if (collectionContainer) {
         const firstSwatch = collectionContainer.querySelector('.swatch_collection');
         if (firstSwatch) {
+            firstSwatch.classList = firstSwatch.classList += " active_swatch"
             changeProductImage(firstSwatch.getAttribute('data-swatch-key'));
         }
     }
 }
+document.querySelectorAll('.swatch_collection').forEach(item => {
+    item.addEventListener("click", () => {
+        document.querySelectorAll('.swatch_collection').forEach(newItem => {
+            newItem.classList.remove("active_swatch");
+        });
+
+        item.classList.add("active_swatch");
+        
+        console.log("clicked", item.classList);
+    });
+});
+
+document.querySelectorAll('.backsplash_collection').forEach(item => {
+    item.addEventListener("click", () => {
+        document.querySelectorAll('.backsplash_collection').forEach(newItem => {
+            newItem.classList.remove("active_swatch");
+        });
+
+        item.classList.add("active_swatch");
+        
+        console.log("clicked", item.classList);
+    });
+});
+
 
 function handleKitChange(selectedKit) {
     document.getElementById('cabinetCollections').style.display = selectedKit === 'cabinet' ? 'block' : 'none';
@@ -164,6 +189,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const backsplash = backsplash_collection.getAttribute("data-swatch-key")
     changeBacksplashImage(backsplash);
+
+    document.querySelectorAll('.backsplash_collection').forEach((newItem, idx) => {
+
+        if(idx == 0) newItem.classList.add("active_swatch");
+    });
 });
 
 function createCarousel(imageUrls) {
