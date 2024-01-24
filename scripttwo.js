@@ -1,13 +1,13 @@
 const collections = {
     cabinet: ['Wood', 'Smooth'],
     wallboard: ['Linen', 'Wood', 'Smooth', 'Specialty'],
-    ceiling: ['test', 'test2']
+    ceiling: ['Textured']
 };
 
 const swatchToImagesMap = {
     cabBirchBark: [
         "http://genesisproductsinc.com/content/uploads/2024/01/Revive_Cab_BirchBrak.jpg",
-        // "http://genesisproductsinc.com/content/uploads/2024/01/Revive_Cab_BirchBark_Limbo.jpg"
+        "http://genesisproductsinc.com/content/uploads/2024/01/Revive_Cab_BirchBark_Limbo.jpg"
     ],
     cabBlondeWalnut: [
         "http://genesisproductsinc.com/content/uploads/2024/01/Revive_Cab_BlondeWalnut.jpg",
@@ -190,3 +190,70 @@ function updateSliderPosition() {
     const translateValue = -currentIndex * slideWidth;
     slider.style.transform = `translateX(${translateValue}px)`;
 }
+
+// STICKY NAV //
+document.addEventListener('DOMContentLoaded', () => {
+    const nav = document.querySelector('.revive-sticky-nav');
+    const navPlaceholder = document.querySelector('.nav-placeholder');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const navInitialTop = nav.offsetTop;
+
+    function adjustNavPlaceholderHeight() {
+        if (nav.classList.contains('fixed-nav')) {
+            navPlaceholder.style.height = `${nav.offsetHeight}px`;
+        } else {
+            navPlaceholder.style.height = '0px';
+        }
+    }
+
+    function toggleStickyNav() {
+        const fromTop = window.scrollY;
+
+        if (fromTop >= navInitialTop) {
+            nav.classList.add('fixed-nav');
+        } else {
+            nav.classList.remove('fixed-nav');
+        }
+        adjustNavPlaceholderHeight();
+    }
+
+    function highlightLink() {
+        let currentSection = '';
+        const fromTop = window.scrollY + nav.offsetHeight;
+
+        navLinks.forEach(link => {
+            const section = document.querySelector(link.getAttribute('href'));
+            const sectionTop = section.offsetTop;
+            if (fromTop >= sectionTop - nav.offsetHeight) {
+                currentSection = link.getAttribute('href');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === currentSection) {
+                link.classList.add('active');
+            }
+        });
+    }
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetSection = document.querySelector(this.getAttribute('href'));
+            const targetPosition = targetSection.offsetTop - nav.offsetHeight;
+
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    window.addEventListener('scroll', () => {
+        toggleStickyNav();
+        highlightLink();
+    });
+
+    toggleStickyNav();
+});
