@@ -16,6 +16,10 @@ overflow-x: scroll;
   font-size: 2.625rem;
   font-weight: 700;
   line-height: 2.75rem;
+  /* color: #78be21; */
+}
+
+.where_to_buy.tab_headline {
   color: #78be21;
 }
 
@@ -498,10 +502,6 @@ overflow-x: scroll;
 #gc_im #where-to-buy {
   padding: 0 0 50px 0;
   margin-bottom: 0;
-}
-
-#gc_im .swatch_collection {
-  border: 2px solid transparent;
 }
 
 #gc_im .active_swatch {
