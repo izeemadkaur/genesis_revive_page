@@ -48,11 +48,10 @@ function setDefaultSwatch(collectionId) {
 function handleKitChange(selectedKit) {
     document.getElementById('cabinetCollections').style.display = selectedKit === 'cabinet' ? 'block' : 'none';
     document.getElementById('wallboardCollections').style.display = selectedKit === 'wallboard' ? 'block' : 'none';
-
     updateCollectionDropdown(selectedKit);
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {    
     const kitDropdown = document.getElementById('kitDropdown');
     kitDropdown.value = 'cabinet';
     handleKitChange(kitDropdown.value);
@@ -101,6 +100,32 @@ const swatchToImagesMap = {
         "http://genesisproductsinc.com/content/uploads/2024/01/Revive_Wall_StructuredLinen_Limbo.jpg",
     ],
 };
+const backsplashImagesMap = {
+    SubwayWhiteGrout: [
+        "http://genesisproductsinc.com/content/uploads/2024/01/Revive_BackSplash_SubwayWhiteGrout.jpg",
+    ],
+    GrayMarble: [
+        "http://genesisproductsinc.com/content/uploads/2024/01/Revive_BackSplash_GrayMarble.jpg",
+    ],
+    CoastalBlue: [
+        "http://genesisproductsinc.com/content/uploads/2024/01/Revive_BackSplash_CoastalBlue.jpg",
+    ],
+    HexWood: [
+        "http://genesisproductsinc.com/content/uploads/2024/01/Revive_BackSplash_HexWood.jpg",
+    ],
+    WhitePickett: [
+        "http://genesisproductsinc.com/content/uploads/2024/01/Revive_Backsplash_WhitePickett.jpg",
+    ],
+    ToastedMarshmallow: [
+        "http://genesisproductsinc.com/content/uploads/2024/01/Revive_Backsplash_ToastedMarshmallow.jpg",
+    ],
+    AgedStone: [
+        "http://genesisproductsinc.com/content/uploads/2024/01/Revive_Backsplash_AgedStone.jpg",
+    ],
+    OliveClayPicket: [
+        "http://genesisproductsinc.com/content/uploads/2024/01/Revive_Backsplash_OlivePickett.jpg",
+    ],
+};
 
 function changeProductImage(swatchKey) {
     const images = swatchToImagesMap[swatchKey];
@@ -117,6 +142,29 @@ function changeProductImage(swatchKey) {
         container.appendChild(img);
     }
 }
+
+function changeBacksplashImage(swatchKey) {
+    const images = backsplashImagesMap[swatchKey];
+    const container = document.getElementById('backsplashImageContainer');
+    container.innerHTML = '';
+
+    if (images.length > 1) {
+        const carousel = createCarousel(images);
+        container.appendChild(carousel);
+    } else {
+        const img = document.createElement('img');
+        img.src = images[0];
+        img.className = 'product_img';
+        container.appendChild(img);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function () {    
+    const backsplash_collection = document.querySelectorAll(".backsplash_collection")?.[0]
+
+    const backsplash = backsplash_collection.getAttribute("data-swatch-key")
+    changeBacksplashImage(backsplash);
+});
 
 function createCarousel(imageUrls) {
     const carousel = document.createElement('div');

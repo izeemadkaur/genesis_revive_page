@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tabbed Interface</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="indextwo.html">Page Two</a></li>
+        </ul>
+    </nav>
+    <div class="tab_section">
+
+        <div class="sticky-nav tab">
+            <a href="#reface" class="nav-link tablinks active">Reface</a>
+            <a href="#replace" class="nav-link tablinks">Replace</a>
+            <a href="#refresh" class="nav-link tablinks">Refresh</a>
+        </div>
+        <div class="nav-placeholder"></div>
+
+
+        <div id="Tab1" class="tabcontent">
+            <section id="reface">
+                <p class="reface tab_headline">
+                    Genesis RE<span>VIVE</span> kits are designed specifically to overlay RV cabinets and walls for a
+                    fresh
+                    look that’s
+                    made to last.
+                </p>
+                <div class="icon_section four_col">
+                    <div class="icon_card">
+                        <img class="icon"
+                            src="https://genesisproductsinc.com/content/uploads/2023/07/Swatch_Green.png" />
+                        <strong>ON-TREND DESIGN</strong>
+                        <p> Choose from trending colors or beautifully detailed woodgrains</p>
+                    </div>
+                    <div class="icon_card">
+                        <img class="icon"
+                            src="https://genesisproductsinc.com/content/uploads/2023/07/Revive-Installation_Green.png" />
+                        <strong>EASY APPLICATIONS</strong>
+                        <p> Peel & stick design for quick installation</p>
+                    </div>
+                    <div class="icon_card">
+                        <img class="icon" src="https://genesisproductsinc.com/content/uploads/2021/04/icon-oem.png" />
+                        <strong>SAVE TIME & MONEY</strong>
+                        <p> No need for messy painting or costly rip & replace jobs</p>
+                    </div>
+                    <div class="icon_card">
+                        <img class="icon"
+                            src="https://genesisproductsinc.com/content/uploads/2023/07/Quality-Stamp_Green.png" />
+                        <strong>PRO ADHESIVE</strong>
+                        <p> Withstands on-the-road conditions and resists bubbling to stick for the long haul</p>
+                    </div>
+                </div>
+                <div class="product_display_section">
+                    <div class="product_categories">
+                        <div class="kit_selection">
+                            <label for="kitDropdown">Select a Kit:</label>
+                            <select id="kitDropdown" onchange="handleKitChange(this.value)">
+                                <option value="cabinet">Cabinet Kit</option>
+                                <option value="wallboard">Wallboard Kit</option>
+                            </select>
+
+                            <label for="collectionDropdown">Select a Collection:</label>
+                            <select id="collectionDropdown">
+                            </select>
+                            <div class="collection_selection" id="cabinetCollections">
+                                <div id="cabinet_wood_collection" class="collection">
+                                    <p>WOOD COLLECTION</p>
+                                    <div class="four_col_no_gap">
+                                        <img title="cabBirchBark" class="swatch_collection" onclick="changeProductImage('cabBirchBark')"
+                                            data-swatch-key="cabBirchBark"
+                                            src="http://genesisproductsinc.com/content/uploads/2024/01/Revive_Cab_BirchBark_Swatch.jpg" />
+                                        <img class="swatch_collection" onclick="changeProductImage('cabBlondeWalnut')"
+                                            data-swatch-key="cabBlondeWalnut"
+                                            src="http://genesisproductsinc.com/content/uploads/2024/01/Revive_Cab_BlondeWalnut_Swatch.jpg" />
+                                        <img class="swatch_collection" onclick="changeProductImage('cabGreenOak')"
+                                            data-swatch-key="cabGreenOak"
+                                            src="http://genesisproductsinc.com/content/uploads/2024/01/Revive_Cab_GreenOak_Swatch.jpg" />
+                                        <img class="swatch_collection" onclick="changeProductImage('cabAlpineAsh')"
+                                            data-swatch-key="cabAlpineAsh"
+                                            src="http://genesisproductsinc.com/content/uploads/2024/01/Revive_Cab_AlpineAsh_Swatch.jpg" />
+                                    </div>
+                                </div>
+                                <div id="cabinet_smooth_collection" class="collection" style="display:none;">
+                                    <p>SMOOTH COLLECTION</p>
+                                    <div class="four_col_no_gap">
+                                        <img class="swatch_collection" onclick="changeProductImage('cabDesginerWhite')"
+                                            data-swatch-key="cabDesginerWhite"
+                                            src="http://genesisproductsinc.com/content/uploads/2024/01/Revive_Cab_DesginerWhite_Swatch.jpg" />
+                                        <img class="swatch_collection" onclick="changeProductImage('cabStoneGray')"
+                                            data-swatch-key="cabStoneGray"
+                                            src="http://genesisproductsinc.com/content/uploads/2024/01/Revive_Cab_StoneGray_Swatch.jpg" />
+                                        <img class="swatch_collection" onclick="changeProductImage('cabMidnightBlue')"
+                                            data-swatch-key="cabMidnightBlue"
+                                            src="http://genesisproductsinc.com/content/uploads/2024/01/Revive_Cab_MidnightBlue_Swatch.jpg" />
+                                        <img class="swatch_collection" onclick="changeProductImage('cabMatteBlack')"
+                                            data-swatch-key="cabMatteBlack"
+                                            src="http://genesisproductsinc.com/content/uploads/2024/01/Revive_Cab_MatteBlack_Swatch.jpg" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="collection_selection" id="wallboardCollections" style="display:none;">
+                                <div id="wallboard_linen_collection" class="collection">
+                                    <p>LINEN COLLECTION</p>
+                                    <div class="four_col_no_gap">
+                                        <img class="swatch_collection"
+                                            onclick="changeProductImage('wallStructuredLinen')"
+                                            data-swatch-key="wallStructuredLinen"
+                                            src="http://genesisproductsinc.com/content/uploads/2024/01/Revive_Wall_StructuredLinen_Swatch.jpg" />
+                                    </div>
+                                </div>
+                                <div id="wallboard_wood_collection" class="collection" style="display:none;">
+                                    <p>WOOD COLLECTION</p>
+                                    <div class="four_col_no_gap">
+                                        <img class="swatch"
+                                            src="https://genesisproductsinc.com/content/uploads/2023/07/Wallboard_Wood-20.png" />
+                                    </div>
+                                </div>
+                                <div id="wallboard_smooth_collection" class="collection" style="display:none;">
+                                    <p>SMOOTH COLLECTION</p>
+                                    <div class="four_col_no_gap">
+                                        <img class="swatch"
+                                            src="https://genesisproductsinc.com/content/uploads/2023/07/Wallboard_Smooth-21.png" />
+                                    </div>
+                                </div>
+                                <div id="wallboard_specialty_collection" class="collection" style="display:none;">
+                                    <p>SPECIALTY</p>
+                                    <div class="four_col_no_gap">
+                                        <img class="swatch_collection"
+                                            onclick="changeProductImage('wallWhitewashPlankedWood')"
+                                            data-swatch-key="wallWhitewashPlankedWood"
+                                            src="http://genesisproductsinc.com/content/uploads/2024/01/Revive_Wall_WhitewashPlankedWood_Swatch.jpg" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="icon_card" id="productImageContainer"></div>
+                </div>
+            </section>
+
+            <section id="replace">
+                <p class="replace tab_headline">
+                    Want to go all in on your reno? Shake things up with brand new laminate cabinet doors. Pair them
+                    with a matching RE<span>VIVE</span> Cabinet Kit for box face frames and side panels and you’ve got
+                    yourself
+                    a whole new kitchen.
+                </p>
+
+                <div class="icon_section two_col">
+                    <div class="icon_section two_col">
+                        <div class="icon_card">
+                            <img class="icon"
+                                src="https://genesisproductsinc.com/content/uploads/2023/07/Swatch_Green.png" />
+                            <strong>ON-TREND DESIGN</strong>
+                            <p> Choose from 5 different profiles & a selection of colors & woodgrains. Pair with a
+                                matching
+                                <strong>RE</strong>VIVE kit for a complete new look
+                            </p>
+                        </div>
+                        <div class="icon_card">
+                            <img class="icon"
+                                src="https://genesisproductsinc.com/content/uploads/2023/07/Revive-Installation_Green.png" />
+                            <strong>EASY TO MAINTAIN</strong>
+                            <p> No additional staining or glazing, easily wipes clean</p>
+                        </div>
+                        <div class="icon_card">
+                            <img class="icon"
+                                src="https://genesisproductsinc.com/content/uploads/2021/04/icon-oem.png" />
+                            <strong>HIGHLY DURABLE</strong>
+                            <p>Resists stains, scratches, warping & fading</p>
+                        </div>
+                        <div class="icon_card">
+                            <strong>Available Colors</strong>
+                            <img class="replace_section_swatch_colors"
+                                src="https://genesisproductsinc.com/content/uploads/2023/07/Available-Colors-17.png" />
+                        </div>
+                    </div>
+                    <div class="icon_section two_col">
+                        <div class="icon_card">
+                            <img class="side_panels"
+                                src="https://genesisproductsinc.com/content/uploads/2023/07/Shaker-1-05.png" />
+                            <strong>Shaker</strong>
+                        </div>
+                        <div class="icon_card">
+                            <img class="side_panels"
+                                src="https://genesisproductsinc.com/content/uploads/2023/07/Thin-Shaker-2-14.png" />
+                            <strong>Thin Shaker</strong>
+                        </div>
+                        <div class="icon_card">
+                            <img class="side_panels"
+                                src="https://genesisproductsinc.com/content/uploads/2023/07/Traditional-3-15.png" />
+                            <strong>Traditional</strong>
+                        </div>
+                        <div class="icon_card">
+                            <img class="side_panels"
+                                src="https://genesisproductsinc.com/content/uploads/2023/07/Beveled-Rail-4-16.png" />
+                            <strong>Beveled Rail</strong>
+                        </div>
+                        <div class="icon_card">
+                            <img class="side_panels"
+                                src="https://genesisproductsinc.com/content/uploads/2023/07/Contemporary-Slab-5-17.png" />
+                            <strong>
+
+                                Contemporary Slab
+                            </strong>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="refresh">
+                <p class="refresh tab_headline">
+                    As one of the most interacted-with elements of a space, hardware plays a huge role in how you
+                    experience
+                    your RV interior. Similarly, an updated and on-trend backsplash makes an immediate impact on the
+                    overall
+                    look and feel of your space.
+                </p>
+
+                <div class="icon_section two_col">
+                    <div class="icon_section two_col">
+                        <div class="icon_card">
+                            <img class="icon"
+                                src="https://genesisproductsinc.com/content/uploads/2023/07/Quality-Stamp_Green.png" />
+                            <strong>RV READY</strong>
+                            <p>Lightweight and designed to match the standard countertop-to-cabinet height</p>
+                        </div>
+                        <div class="icon_card">
+                            <img class="icon"
+                                src="https://genesisproductsinc.com/content/uploads/2021/04/icon-oem.png" />
+                            <strong>EASY TO INSTALL</strong>
+                            <p>Install with adhesive tape or bonding agent – no grout or thinest needed</p>
+                        </div>
+                    </div>
+                    <div class="icon_section">
+                        <img class="product_img"
+                            src="https://genesisproductsinc.com/content/uploads/2023/07/BackSplash_CoastalBlue_copy10x10@96dpi.jpg" />
+                    </div>
+                    <div>
+                        <div class="green_label">
+                            <strong>
+
+                                BACKSPLASH & HARDWARE
+                            </strong>
+                        </div>
+
+                        <div>
+                            <ul>
+                                <li>8 lightweight backsplash options printed in 3D for the look and feel of real tile
+                                </li>
+                                <li>6 residential-grade hardware collections in 4 different finishes</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="icon_section">
+                        <img class="product_img"
+                            src="https://genesisproductsinc.com/content/uploads/2023/07/Hardware-10-10.png" />
+                    </div>
+                </div>
+            </section>
+
+
+        </div>
+
+        <script src="script.js"></script>
+</body>
+
+</html>
