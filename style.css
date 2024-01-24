@@ -1,4 +1,4 @@
-body {
+#gc_im body {
   font-family: Arial;
   background-color: #ebebeb;
 }
@@ -52,41 +52,41 @@ overflow-x: scroll;
   left: 0;
 }
 
-.slab_available_colors {
+#gc_im .slab_available_colors {
   background-color: #eee;
+  padding: 20px;
 }
 
-.max-width {
+#gc_im .max-width {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-#reface,
+#gc_im #reface,
 #replace,
-#refresh,
-#where-to-buy {
+#refresh, #where-to-buy {
   background: #fff;
   margin: 50px;
 }
 
-.tab_section {
+#gc_im .tab_section {
   margin: 0 auto;
   background-color: #fff;
   position: relative;
 }
 
-.tab {
+#gc_im .tab {
   overflow: hidden;
   background-color: #78be21;
   display: flex;
   justify-content: center;
 }
 
-.tab li {
+#gc_im .tab li {
   padding: 10px;
 }
 
-.tab a {
+#gc_im .tab a {
   background-color: inherit;
   float: left;
   border: none;
@@ -98,16 +98,16 @@ overflow-x: scroll;
   text-transform: uppercase;
 }
 
-.tabcontent {
+#gc_im .tabcontent {
   padding: 4.25rem;
   border-top: none;
 }
 
-.tablinks span {
+#gc_im .tablinks span {
   font-weight: bold;
 }
 
-.tab_headline {
+#gc_im .tab_headline {
   font-weight: 700;
   line-height: 100%;
   margin: 0;
@@ -118,110 +118,111 @@ overflow-x: scroll;
   margin-top: 5rem;
 }
 
-.tab_headline span {
+#gc_im .tab_headline span {
   font-weight: 400;
 }
 
 /* COLUMNS */
 .four_col,
 .three_col,
-.two_col {
+#gc_im .two_col {
   display: grid;
   grid-gap: 40px;
 }
 
-.four_col {
+#gc_im .four_col {
   grid-template-columns: repeat(4, 1fr);
 }
 
-.two_col {
+#gc_im .two_col {
   grid-template-columns: repeat(2, 1fr);
 }
-.three_col {
+#gc_im .three_col {
   grid-template-columns: repeat(3, 1fr);
 }
 
-.icon_section {
+#gc_im .icon_section {
   margin-top: 3rem;
 }
 
-.icon {
-  height: 100px;
-  width: 100px;
+#gc_im .icon {
+  height: auto;
+  width: 100%;
+  max-width: 150px;
   object-fit: cover;
 }
 
-.icon_card {
+#gc_im .icon_card {
   display: flex;
   flex-direction: column;
   align-items: center;
   color: #535659;
 }
 
-.icon_card strong {
+#gc_im .icon_card strong {
   margin: 0;
   padding: 0;
   margin-top: 30px;
 }
 
-.icon_card p {
+#gc_im .icon_card p {
   padding: 0;
   margin: 0;
   margin-top: 10px;
 }
 
-.product_display_section {
+#gc_im .product_display_section {
   margin-top: 3rem;
   display: flex;
   grid-gap: 20px;
 }
 
-.swatch {
+#gc_im .swatch {
   width: 235px;
   height: auto;
   object-fit: cover;
 }
 
-.swatch_collection {
+#gc_im .swatch_collection {
   width: 100%;
   height: auto;
   object-fit: cover;
   max-width: 800px;
 }
 
-.backsplash_collection {
+#gc_im .backsplash_collection {
   
 }
 
-.tooltip {
+#gc_im .tooltip {
   width: 100%;
   font-family: Miller Text Bd, serif;
 }
 
 .backsplash_selection,
-.collection_selection {
+#gc_im .collection_selection {
   max-width: 800px;
 }
 
-.backsplash_collection {
+#gc_im .backsplash_collection {
   width: 100%;
   height: auto;
   object-fit: cover;
 }
 
-.product_img {
+#gc_im .product_img {
   width: 100%;
   height: auto;
   object-fit: cover;
   aspect-ratio: 16/9;
 }
 
-.kit {
+#gc_im .kit {
   display: flex;
   flex-direction: column;
 }
 
-.collection {
+#gc_im .collection {
   margin-bottom: 30px;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -229,14 +230,14 @@ overflow-x: scroll;
 }
 
 .collection p,
-.collection strong {
+#gc_im .collection strong {
   padding: 0;
   margin: 0;
   margin-top: 10px;
 }
 
 .kit_selection,
-.backsplash_selection {
+#gc_im .backsplash_selection {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -245,62 +246,62 @@ overflow-x: scroll;
   height: 100%;
 }
 
-label {
+#gc_im label {
   margin-right: 5px;
 }
 
-.collection {
+#gc_im .collection {
   margin: 0;
 }
 
-.reface {
+#gc_im .reface {
   margin-top: 0;
 }
 
-.side_panels {
+#gc_im .side_panels {
   width: 100%;
   height: auto;
 }
 
-.replace_section_swatch_colors {
+#gc_im .replace_section_swatch_colors {
   width: 100%;
   height: auto;
 }
 
-.green_label {
+#gc_im .green_label {
   margin-bottom: 30px;
   line-height: 1.5rem;
   color: #78be21;
 }
 
-#refresh ul {
+#gc_im #refresh ul {
   list-style: disc;
   margin: 1rem 0;
 }
 
-#refresh li {
+#gc_im #refresh li {
   margin: 0 0 10px;
   line-height: 1.5rem;
 }
 
 /* CAROUSEL STYLES */
-.carousel {
+#gc_im .carousel {
   width: 100%;
   position: relative;
 }
 
-.carousel img {
+#gc_im .carousel img {
   width: 100%;
   display: none;
   aspect-ratio: 16/9;
   object-fit: cover;
 }
 
-.carousel img.active {
+#gc_im .carousel img.active {
   display: block;
 }
 
-.carousel-controls {
+#gc_im .carousel-controls {
   position: absolute;
   width: 100%;
   top: 50%;
@@ -311,7 +312,7 @@ label {
   display: none;
 }
 
-.carousel-control {
+#gc_im .carousel-control {
   background-color: #fff;
   border: none;
   cursor: pointer;
@@ -319,58 +320,62 @@ label {
   font-size: 16px;
 }
 
-.sticky-nav {
+#gc_im .sticky-nav {
   box-sizing: border-box;
   width: 100%;
   z-index: 1000;
   /* max-width: 1200px; */
 }
 
-.fixed-nav {
+#gc_im .fixed-nav {
   position: fixed;
   top: 0;
 }
 
-.nav-link {
+#gc_im .nav-link {
   padding: 10px;
   text-decoration: none;
 }
 
-.nav-link.active {
+#gc_im .nav-link.active {
   font-weight: bold;
 }
 
 @media screen and (max-width: 1024px) {
-  .product_display_section {
+  #gc_im .product_display_section {
     flex-direction: column;
   }
-  .four_col {
+  #gc_im .four_col {
     grid-template-columns: 1fr 1fr;
   }
 
-  .tabcontent {
+  #gc_im .four_col_where {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  #gc_im .tabcontent {
     padding: 15px;
     margin-top: 20px;
   }
 
-  #replace .icon_section,
-  #refresh .icon_section {
+  #gc_im #replace .icon_section,
+  #gc_im #refresh .icon_section {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-.nav-placeholder {
+#gc_im .nav-placeholder {
   height: 0;
   transition: height 0.3s ease;
 }
 
-.four_col_no_gap {
+#gc_im .four_col_no_gap {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 10px;
 }
 
-select {
+#gc_im select {
   width: 250px;
   height: 40px;
 
@@ -403,17 +408,17 @@ select {
   white-space: nowrap;
 }
 
-.full_page {
+#gc_im .full_page {
   height: 100vh;
   width: 100%;
 }
 
-.where_to_buy {
+#gc_im .where_to_buy {
   text-align: center;
   margin: 100px auto 20px auto;
 }
 
-.where_to_buy_btn {
+#gc_im .where_to_buy_btn {
   margin-top: 30px;
 
   background: transparent;
@@ -422,12 +427,12 @@ select {
   color: #78be21;
 }
 
-.tooltip {
+#gc_im .tooltip {
   position: relative;
   display: inline-block;
 }
 
-.tooltip .tooltiptext {
+#gc_im .tooltip .tooltiptext {
   visibility: hidden;
   width: 120px;
   background-color: #5bbac7;
@@ -445,13 +450,13 @@ select {
   margin-bottom: 5px;
 }
 
-.tooltip:hover .tooltiptext {
+#gc_im .tooltip:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
 }
 
 /* Arrow design */
-.tooltip .tooltiptext::after {
+#gc_im .tooltip .tooltiptext::after {
   content: "";
   position: absolute;
   top: 100%;
@@ -462,17 +467,17 @@ select {
   border-color: #5bbac7 transparent transparent transparent;
 }
 
-.product_display_section {
+#gc_im .product_display_section {
   background-color: #ebebeb;
   padding: 50px;
 }
 
-.collection_selection {
+#gc_im .collection_selection {
   margin-top: 20px;
 }
 
 @media screen and (max-width: 768px) {
-  .tab_headline {
+  #gc_im .tab_headline {
     font-size: 2rem;
     max-width: 100%;
     margin-top: 5rem;
@@ -481,37 +486,37 @@ select {
   #reface,
   #replace,
   #refresh,
-  #where-to-buy {
+  #gc_im #where-to-buy {
     margin: 50px 20px;
   }
 
-  #replace .two_col_mobile {
+  #gc_im #replace .two_col_mobile {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-#where-to-buy {
+#gc_im #where-to-buy {
   padding: 0 0 50px 0;
   margin-bottom: 0;
 }
 
-.swatch_collection {
+#gc_im .swatch_collection {
   border: 2px solid transparent;
 }
 
-.active_swatch {
+#gc_im .active_swatch {
   border: 2px solid #78be21;
 }
 
-.select_swatch {
+#gc_im .select_swatch {
   text-align: left;
   margin: 10px 0;
 }
-.backsplash_selection .four_col_no_gap {
+#gc_im .backsplash_selection .four_col_no_gap {
   margin: 0;
 }
 
-.backsplash_selection {
+#gc_im .backsplash_selection {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -520,6 +525,6 @@ select {
   height: 100%;
 }
 
-.icon_card {
+#gc_im .icon_card {
   grid-gap: 20px;
 }
