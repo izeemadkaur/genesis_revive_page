@@ -1,239 +1,3 @@
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    h2,
-    h4 {
-        font-size: 2.625rem;
-        margin: 100px 0 50px 0;
-    }
-
-    .page-divider {
-        margin: 100px 0;
-        height: 4px;
-        width: 100%;
-        box-shadow: 1px 1px 20px #000;
-    }
-
-    body {
-        font-family: Arial;
-        background-color: #ebebeb;
-        text-align: center;
-    }
-
-    p {
-        margin: 10px auto;
-    }
-
-    .main {
-        margin: 0 auto;
-        background-color: #fff;
-        position: relative;
-    }
-
-
-
-
-    .nav-link {
-        padding: 10px;
-        text-decoration: none;
-    }
-
-    .nav-link.active {
-        font-weight: bold;
-    }
-
-    .four_col {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-    .two_col {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .icon_section {
-        margin: 3rem 0;
-        display: flex;
-    }
-
-    .icon {
-        height: 100px;
-        width: 100px;
-        object-fit: cover;
-    }
-
-
-
-    .icon_card strong {
-        margin: 0;
-        padding: 0;
-        margin-top: 30px;
-    }
-
-    .icon_card p {
-        padding: 0;
-        margin: 0;
-        margin-top: 10px;
-    }
-
-    .slider-container {
-        position: relative;
-        width: 100%;
-        max-width: 600px;
-        margin: auto;
-        overflow: hidden;
-    }
-
-    .slider {
-        display: flex;
-        transition: transform 0.5s ease-in-out;
-    }
-
-    .slide {
-        min-width: 100%;
-        box-sizing: border-box;
-        overflow: hidden;
-    }
-
-    .slide img {
-        max-width: 50vw;
-        max-height: 500px;
-        border-radius: 5px;
-        aspect-ratio: 1;
-        object-fit: cover;
-    }
-
-    .toggle-headline {
-        margin-bottom: 0;
-    }
-
-    .toggle-kits {
-        display: flex;
-        justify-content: center;
-        margin-top: 10px;
-    }
-
-    .toggle-button {
-        padding: 10px;
-        cursor: pointer;
-    }
-
-    .toggle-collections {
-        display: flex;
-        justify-content: center;
-        margin-top: 10px;
-    }
-
-    .toggle-switch {
-        padding: 10px;
-        cursor: pointer;
-        border: 1px solid #ccc;
-        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-    }
-
-    .toggle-switch:hover {
-        background-color: #f0f0f0;
-    }
-
-    .toggle-switch.active {
-        background-color: #78be21;
-        color: #fff;
-    }
-
-    .color-swatches {
-        display: flex;
-        justify-content: center;
-        margin-top: 20px;
-    }
-
-    .color-swatches img {
-        max-width: 100px;
-        margin: 0 5px;
-        cursor: pointer;
-        border-radius: 5px;
-        transition: transform 0.3s ease-in-out;
-    }
-
-    .color-swatches img:hover,
-    .color-swatches img:active {
-        transform: scale(1.1);
-    }
-
-    .hardware-grid-container {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 30px;
-        width: 100%;
-        margin: 0 auto;
-    }
-
-    .hardware-grid-item {
-        position: relative;
-        max-width: 100%;
-        grid-gap: 20px;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .hardware-grid-item img.hardware-grid-img {
-        width: 100%;
-        transition: transform 0.3s ease-in-out;
-    }
-
-    .hardware-grid-item img.hardware-grid-img:hover {
-        transform: scale(1.1);
-    }
-
-    .hardware-label {
-        position: relative;
-        margin-top: -30px;
-        text-align: left;
-        margin-left: 20px;
-    }
-
-    .center-label {
-        text-align: center;
-    }
-
-    .backsplash-image-main {
-        width: 100%;
-        -webkit-box-shadow: 10px 10px 21px -8px rgba(0, 0, 0, 0.75);
-        -moz-box-shadow: 10px 10px 21px -8px rgba(0, 0, 0, 0.75);
-        box-shadow: 10px 10px 21px -8px rgba(0, 0, 0, 0.75);
-    }
-
-    .backsplash-image-hover {
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        object-fit: contain;
-        opacity: 0;
-        transition: opacity 0.3s;
-        width: 100%;
-    }
-
-    .hardware-grid-item:hover img.backsplash-image-hover {
-        opacity: 1;
-    }
-
-    /* Media Queries */
-    @media (max-width: 768px) {
-        .icon_section {
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .hardware-grid-container {
-            grid-template-columns: 1fr 1fr;
-        }
-    }
-</style>
-
 <head>
     <title>Tabbed Interface</title>
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -246,15 +10,17 @@
             <li><a href="#reface" class="nav-link tablinks active">Reface</a></li>
             <li><a href="#replace" class="nav-link tablinks">Replace</a></li>
             <li><a href="#refresh" class="nav-link tablinks">Refresh</a></li>
-            <li><a href="#where-to-buy" class="nav-link tablinks">Where To Buy</a></li>
+            <li style="border-left: 2px solid #fff;"><a href="#where-to-buy" class="nav-link tablinks">Where To Buy</a>
+            </li>
         </div>
         <div class="nav-placeholder"></div>
         <section id="reface">
             <div class="max-width">
-                <h2 class="reface tab_headline">
+                <h2 style="padding-bottom: 20px;"><strong>RE</strong>FACE</h2>
+                <p class="reface tab_headline">
                     Genesis RE<span>VIVE</span> kits are designed specifically to overlay RV cabinets and walls for a
                     fresh look that’s made to last.
-                </h2>
+                </p>
 
                 <article class="icon_section four_col">
                     <figure class="icon_card">
@@ -402,77 +168,84 @@
 
         <section id="replace">
             <div class="max-width">
+                <h2 style="padding-bottom: 20px;"><strong>RE</strong>PLACE</h2>
                 <header>
-                    <h2 class="replace tab_headline">
+                    <p class="replace tab_headline">
                         Want to go all in on your reno? Shake things up with brand new laminate cabinet doors. Pair them
                         with a matching RE<span>VIVE</span> Cabinet Kit for box face frames and side panels and you’ve
                         got
                         yourself a whole new kitchen.
-                    </h2>
+                    </p>
                 </header>
 
                 <div class="icon_section three_col two_col_mobile">
                     <article class="icon_card">
                         <img class="icon" src="https://genesisproductsinc.com/content/uploads/2023/07/Swatch_Green.png"
                             alt="On-Trend Design Icon" />
-                        <h3>ON-TREND DESIGN</h3>
-                        <p>Choose from 5 different profiles & a selection of colors & woodgrains. Pair with a
-                            matching <strong>RE</strong>VIVE kit for a complete new look.
-                        </p>
+                        <figcaption>
+                            <strong>ON-TREND DESIGN</strong>
+                            <p>Choose from 5 different profiles & a selection of colors & woodgrains. Pair with a
+                                matching <strong>RE</strong>VIVE kit for a complete new look.
+                            </p>
+                        </figcaption>
                     </article>
                     <article class="icon_card">
                         <img class="icon"
                             src="https://genesisproductsinc.com/content/uploads/2023/07/Revive-Installation_Green.png"
                             alt="Easy to Maintain Icon" />
-                        <h3>EASY TO MAINTAIN</h3>
-                        <p>No additional staining or glazing, easily wipes clean.</p>
+                        <figcaption>
+                            <strong>EASY TO MAINTAIN</strong>
+                            <p>No additional staining or glazing, easily wipes clean.</p>
+                        </figcaption>
                     </article>
                     <article class="icon_card">
                         <img class="icon" src="https://genesisproductsinc.com/content/uploads/2021/04/icon-oem.png"
                             alt="Highly Durable Icon" />
-                        <h3>HIGHLY DURABLE</h3>
-                        <p>Resists stains, scratches, warping & fading.</p>
+                        <figcaption>
+                            <strong>HIGHLY DURABLE</strong>
+                            <p>Resists stains, scratches, warping & fading.</p>
+                        </figcaption>
                     </article>
                 </div>
 
-                <div class="icon_section three_col two_col_mobile">
+                <div class="icon_section three_col two_col_mobile" style="padding: 20px; background-color: #ebebeb;">
                     <article class="icon_card">
                         <img class="side_panels"
                             src="https://genesisproductsinc.com/content/uploads/2023/07/Shaker-1-05.png"
                             alt="Shaker Door Style" />
-                        <h3>Shaker</h3>
+                        <p>Shaker</p>
                     </article>
 
                     <article class="icon_card">
                         <img class="side_panels"
                             src="https://genesisproductsinc.com/content/uploads/2023/07/Thin-Shaker-2-14.png"
                             alt="Thin Shaker Door Style" />
-                        <h3>Thin Shaker</h3>
+                        <p>Thin Shaker</p>
                     </article>
 
                     <article class="icon_card">
                         <img class="side_panels"
                             src="https://genesisproductsinc.com/content/uploads/2023/07/Traditional-3-15.png"
                             alt="Traditional Door Style" />
-                        <h3>Traditional</h3>
+                        <p>Traditional</p>
                     </article>
 
                     <article class="icon_card">
                         <img class="side_panels"
                             src="https://genesisproductsinc.com/content/uploads/2023/07/Beveled-Rail-4-16.png"
                             alt="Beveled Rail Door Style" />
-                        <h3>Beveled Rail</h3>
+                        <p>Beveled Rail</p>
                     </article>
 
                     <article class="icon_card">
                         <img class="side_panels"
                             src="https://genesisproductsinc.com/content/uploads/2023/07/Contemporary-Slab-5-17.png"
                             alt="Contemporary Slab Door Style" />
-                        <h3>Contemporary Slab</h3>
+                        <p>Contemporary Slab</p>
                     </article>
 
-                    <article class="icon_card slab_available_colors">
-                        <h3>Available Colors</h3>
+                    <article class="icon_card slab_available_colors" style="background-color: #ebebeb;">
+                        <p><strong>Available Colors</strong></p>
                         <img class="replace_section_swatch_colors"
                             src="https://genesisproductsinc.com/content/uploads/2023/07/Available-Colors-17.png"
                             alt="Available Colors for Doors" />
@@ -488,13 +261,14 @@
 
         <section id="refresh">
             <div class="max-width">
+                <h2 style="padding-bottom: 20px;"><strong>RE</strong>VIVE</h2>
                 <header>
-                    <h2 class="refresh tab_headline">
+                    <p class="refresh tab_headline">
                         As one of the most interacted-with elements of a space, hardware plays a huge role in how you
                         experience your RV interior. Similarly, an updated and on-trend backsplash makes an immediate
                         impact on the
                         overall look and feel of your space.
-                    </h2>
+                    </p>
                 </header>
 
                 <article class="icon_section two_col">
@@ -591,13 +365,70 @@
                         </div>
                     </div>
                 </div>
+                <br>
+                <p><strong>Finishes</strong></p>
+                <div class="hardware-grid-container">
+                    <div class="hardware-grid-item">
+                        <img class="hardware-grid-img" src="http://genesisproductsinc.com/content/uploads/2024/01/Revive_Hardware_KnobRound_AntiqueBronze.jpg" alt ="Antique Bronze" title ="Antique Bronze">
+                        <p class="hardware-label center-label">Antique Bronze</p>
+                    </div>
+                    <div class="hardware-grid-item">
+                        <img class="hardware-grid-img" src="http://genesisproductsinc.com/content/uploads/2024/01/Revive_Hardware_KnobRound_GoldSatin.jpg" alt ="Gold Satin" title ="Gold Satin">
+                        <p class="hardware-label center-label">Gold Satin</p>
+                    </div>
+                    <div class="hardware-grid-item">
+                        <img class="hardware-grid-img" src="http://genesisproductsinc.com/content/uploads/2024/01/Revive_Hardware_KnobRound_MatteBlack.jpg" alt ="Matte Black" title ="Matte Black">
+                        <p class="hardware-label center-label">Matte Black</p>
+                    </div>
+                    <div class="hardware-grid-item">
+                        <img class="hardware-grid-img" src="http://genesisproductsinc.com/content/uploads/2024/01/Revive_Hardware_KnobRound_PolishedChrome.jpg" alt ="Polished Chrome" title ="Polished Chrome">
+                        <p class="hardware-label center-label">Polished Chrome</p>
+                    </div>
+                </div>
+                <p><strong>Collections</strong></p>
+                <div class="hardware-grid-container">
+                    <div class="hardware-grid-item">
+                        <img class="hardware-grid-img" src="http://genesisproductsinc.com/content/uploads/2024/01/Revive_Hardware_Acadia_PolishedChrome.jpg" alt ="Acadia Polished Chrome" title ="Acadia Polished Chrome">
+                        <p class="hardware-label">Acadia</p>
+                    </div>
+                    <div class="hardware-grid-item">
+                        <img class="hardware-grid-img" src="http://genesisproductsinc.com/content/uploads/2024/01/Revive_Hardware_Arches_PolishedChrome.jpg" alt ="Arches Polished Chrome" title ="Arches Polished Chrome">
+                        <p class="hardware-label">Arches</p>
+                    </div>
+                    <div class="hardware-grid-item">
+                        <img class="hardware-grid-img" src="http://genesisproductsinc.com/content/uploads/2024/01/Revive_Hardware_Rainier_PolishedChrome.jpg" alt ="Rainier Polished Chrome" title ="Rainier Polished Chrome">
+                        <p class="hardware-label">Rainier</p>
+                    </div>
+                    <div class="hardware-grid-item">
+                        <img class="hardware-grid-img" src="http://genesisproductsinc.com/content/uploads/2024/01/Revive_Hardware_Sequoia_PolishedChrome.jpg" alt ="Sequoia Polished Chrome" title ="Sequoia Polished Chrome">
+                        <p class="hardware-label">Sequoia</p>
+                    </div>
+                    <div class="hardware-grid-item">
+                        <img class="hardware-grid-img" src="http://genesisproductsinc.com/content/uploads/2024/01/Revive_Hardware_Sedona_PolishedChrome.jpg" alt ="Sedona Polished Chrome" title ="Sedona Polished Chrome">
+                        <p class="hardware-label">Sedona</p>
+                    </div>
+                    <div class="hardware-grid-item">
+                        <img class="hardware-grid-img" src="http://genesisproductsinc.com/content/uploads/2024/01/Revive_Hardware_Tahoe_PolishedChrome.jpg" alt ="Tahoe Polished Chrome" title ="Tahoe Polished Chrome">
+                        <p class="hardware-label">Tahoe</p>
+                    </div>
+                    <div class="hardware-grid-item">
+                        <img class="hardware-grid-img" src="http://genesisproductsinc.com/content/uploads/2024/01/Revive_Hardware_KnobSquare_PolishedChrome.jpg" alt ="Square Knob Polished Chrome" title ="Square Knob Polished Chrome">
+                        <p class="hardware-label center-label">Square Knob</p>
+                    </div>
+                    <div class="hardware-grid-item">
+                        <img class="hardware-grid-img" src="http://genesisproductsinc.com/content/uploads/2024/01/Revive_Hardware_KnobRound_PolishedChrome.jpg" alt ="Round Knob Polished Chrome" title ="Round Knob Polished Chrome">
+                        <p class="hardware-label center-label">Round Knob</p>
+                    </div>
+                </div>
             </div>
+            
         </section>
-
+        
+        <div class="page-divider"></div>
         <section id="where-to-buy">
             <div class="max-width">
                 <header>
-                    <h2 class="where_to_buy tab_headline">WHERE TO BUY</h2>
+                    <h2 class="where_to_buy tab_headline">Where to Buy</h2>
                     <p>Find us at these exclusive distributors</p>
                 </header>
                 <nav class="icon_section four_col four_col_where">
