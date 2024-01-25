@@ -1,0 +1,1823 @@
+<style>
+    /* background override */
+    .siteorigin-panels-stretch {
+        background-color: white !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .page-divider {
+        margin: 100px 0;
+        height: 4px;
+        width: 100%;
+        background-color: #ebebeb;
+    }
+
+    .main {
+        margin: 0 auto;
+        background-color: #fff;
+        position: relative;
+        text-align: center;
+    }
+
+
+    #gc_im header p {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
+    .nav-link {
+        padding: 10px;
+        text-decoration: none;
+    }
+
+    .nav-link.active {
+        font-weight: bold;
+    }
+
+    .four_col {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .two_col {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .icon_section {
+        margin: 3rem 0;
+        display: flex;
+    }
+
+    .icon {
+        height: 100px;
+        width: 100px;
+        object-fit: cover;
+    }
+
+
+
+    .icon_card strong {
+        margin: 0;
+        padding: 0;
+        margin-top: 30px;
+    }
+
+    .icon_card p {
+        padding: 0;
+        margin: 0;
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .slider-container {
+        position: relative;
+        width: 100%;
+        max-width: 600px;
+        margin: auto;
+        overflow: hidden;
+    }
+
+    .slider {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .slide {
+        min-width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .slide img {
+        max-width: 50vw;
+        max-height: 500px;
+        border-radius: 5px;
+        aspect-ratio: 1;
+        object-fit: cover;
+    }
+
+    .toggle-headline {
+        margin-bottom: 0;
+    }
+
+    .toggle-kits {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .toggle-button {
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    .toggle-collections {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .toggle-switch {
+        padding: 10px;
+        cursor: pointer;
+        border: 1px solid #ccc;
+        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    }
+
+    .toggle-switch:hover {
+        background-color: #f0f0f0;
+    }
+
+    .toggle-switch.active {
+        background-color: #78be21;
+        color: #fff;
+    }
+
+    .color-swatches {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .color-swatches img {
+        max-width: 100px;
+        margin: 0 5px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .color-swatches img:hover,
+    .color-swatches img:active {
+        transform: scale(1.1);
+    }
+
+    .hardware-grid-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        max-width: 840px;
+        margin: 0 auto;
+    }
+
+    .hardware-grid-item {
+        position: relative;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hardware-grid-item img.hardware-grid-img {
+        width: 100%;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .hardware-grid-item img.hardware-grid-img:hover {
+        transform: scale(1.1);
+    }
+
+    .hardware-label {
+        position: relative;
+        margin-top: -30px;
+        margin-left: 20px;
+    }
+
+    .center-label {
+        text-align: center;
+    }
+
+    .backsplash-image-main {
+        width: 100%;
+        -webkit-box-shadow: 10px 10px 21px -8px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 10px 10px 21px -8px rgba(0, 0, 0, 0.75);
+        box-shadow: 10px 10px 21px -8px rgba(0, 0, 0, 0.75);
+    }
+
+    .backsplash-image-hover {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        object-fit: contain;
+        opacity: 0;
+        transition: opacity 0.3s;
+        width: 100%;
+    }
+
+    .hardware-grid-item:hover img.backsplash-image-hover {
+        opacity: 1;
+    }
+
+    /* Media Queries */
+    @media (max-width: 768px) {
+        .icon_section {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .hardware-grid-container {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    #gc_im body {
+        font-family: Arial;
+        background-color: #ebebeb;
+    }
+
+    #gc_im .gm_im_sticky-nav li {
+        list-style: none;
+        margin: 5px 0;
+    }
+
+    #gc_im .gm_im_sticky-nav {
+        overflow-x: scroll;
+    }
+
+
+    #gc_im h2 {
+        font-size: 1.75rem;
+        font-weight: 400;
+        line-height: 2.125rem;
+        color: #78be21;
+    }
+
+    .where_to_buy.tab_headline {
+        color: #78be21;
+    }
+
+    #gc_im .gm_im_sticky-nav a {
+        color: #fff;
+        text-transform: uppercase;
+        text-decoration: none;
+        letter-spacing: 0.15em;
+
+        display: inline-block;
+        position: relative;
+    }
+
+    #gc_im .gm_im_sticky-nav a:after {
+        background: none repeat scroll 0 0 transparent;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 2px;
+        left: 50%;
+        position: absolute;
+        background: #78be21;
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
+    }
+
+    #gc_im .gm_im_sticky-nav a:hover:after {
+        width: 100%;
+        left: 0;
+    }
+
+    #gc_im .gm_im_sticky-nav .nav-link.active:after {
+        width: 100%;
+        left: 0;
+    }
+
+    #gc_im .slab_available_colors {
+        background-color: #eee;
+        padding: 20px;
+    }
+
+    #gc_im .max-width {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    #gc_im #reface,
+    #replace,
+    #refresh,
+    #where-to-buy {
+        background: #fff;
+        margin: 50px;
+    }
+
+    #gc_im .tab_section {
+        margin: 0 auto;
+        background-color: #fff;
+        position: relative;
+    }
+
+    #gc_im .tab {
+        overflow: hidden;
+        background-color: #535659;
+        display: flex;
+        justify-content: center;
+    }
+
+    #gc_im .tab li {
+        margin: 10px 0;
+        padding: 5px 20px;
+    }
+
+    #gc_im .tab a {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        transition: 0.3s;
+        font-size: 17px;
+        color: #fff;
+        text-transform: uppercase;
+    }
+
+    #gc_im .tabcontent {
+        padding: 4.25rem;
+        border-top: none;
+    }
+
+    #gc_im .tablinks span {
+        font-weight: bold;
+    }
+
+    /* COLUMNS */
+    .four_col,
+    .three_col,
+    #gc_im .two_col {
+        display: grid;
+        grid-gap: 40px;
+    }
+
+    #gc_im .four_col {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    #gc_im .two_col {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #gc_im .three_col {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    #gc_im .icon_section {
+        margin-top: 3rem;
+    }
+
+    #gc_im .icon {
+        height: auto;
+        width: 100%;
+        max-width: 150px;
+        object-fit: cover;
+    }
+
+    #gc_im .icon_card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #535659;
+    }
+
+    #gc_im .icon_card strong {
+        margin: 0;
+        padding: 0;
+        margin-top: 30px;
+    }
+
+    #gc_im .icon_card p {
+        padding: 0;
+        margin: 0;
+        margin-top: 10px;
+    }
+
+    #gc_im .product_display_section {
+        margin-top: 3rem;
+        display: flex;
+        grid-gap: 40px;
+    }
+
+    #gc_im .reface_display_section {
+        background: linear-gradient(90deg, rgba(245, 245, 245, 1) 0%, rgba(200, 200, 200, 1) 100%);
+        border-left: 4px solid #78be21;
+        border-radius: 0 10px 10px 0;
+    }
+
+    #gc_im .backsplash_display_section {
+        border-right: 4px solid #78be21;
+        border-radius: 10px 0 0 10px;
+    }
+
+    #gc_im .swatch {
+        width: 235px;
+        height: auto;
+        object-fit: cover;
+    }
+
+    #gc_im .swatch_collection {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        max-width: 800px;
+    }
+
+    #gc_im .tooltip {
+        width: 100%;
+        font-family: Miller Text Bd, serif;
+    }
+
+    .backsplash_selection,
+    #gc_im .collection_selection {
+        max-width: 800px;
+    }
+
+    #gc_im .backsplash_collection {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    #gc_im #productImageContainer,
+    #gc_im #backsplashImageContainer {
+        position: relative;
+        width: 100%;
+    }
+
+    #gc_im .product_img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        aspect-ratio: 16/9;
+        position: absolute;
+    }
+
+    #gc_im .imagePlaceholder {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        aspect-ratio: 16/9;
+        background-color: inherit;
+    }
+
+    #gc_im .kit {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #gc_im .collection {
+        margin-bottom: 30px;
+        font-size: 0.8125rem;
+        line-height: 1.5rem;
+        color: #78be21;
+    }
+
+    .collection p,
+    #gc_im .collection strong {
+        padding: 0;
+        margin: 0;
+        margin-top: 10px;
+    }
+
+    .kit_selection,
+    #gc_im .backsplash_selection {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        grid-gap: 5px;
+        justify-content: space-around;
+        height: 100%;
+    }
+
+    #gc_im label {
+        margin-right: 5px;
+    }
+
+    #gc_im .collection {
+        margin: 0;
+    }
+
+    #gc_im .reface {
+        margin-top: 0;
+    }
+
+    #gc_im .side_panels {
+        width: 100%;
+        height: auto;
+    }
+
+    #gc_im .replace_section_swatch_colors {
+        width: 100%;
+        height: auto;
+    }
+
+    #gc_im .green_label {
+        margin-bottom: 30px;
+        line-height: 1.5rem;
+        color: #78be21;
+    }
+
+    #gc_im #refresh ul {
+        list-style: disc;
+        margin: 1rem 0;
+    }
+
+    #gc_im #refresh li {
+        margin: 0;
+        line-height: 1.5rem;
+    }
+
+    /* CAROUSEL STYLES */
+    #gc_im .carousel {
+        width: 100%;
+        position: relative;
+    }
+
+    #gc_im .carousel img {
+        width: 100%;
+        display: none;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+    }
+
+    #gc_im .carousel img.active {
+        display: block;
+    }
+
+    #gc_im .carousel-controls {
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        justify-content: space-between;
+        padding: 0 10px;
+        display: none;
+    }
+
+    #gc_im .carousel-control {
+        background-color: #fff;
+        border: none;
+        cursor: pointer;
+        padding: 5px 10px;
+        font-size: 16px;
+    }
+
+    #gc_im .gm_im_sticky-nav {
+        box-sizing: border-box;
+        width: 100%;
+        z-index: 1000;
+        grid-gap: 50px;
+    }
+
+    #gc_im .fixed-nav {
+        position: fixed;
+        top: 50px;
+        left: 0;
+    }
+
+    #gc_im .nav-link {
+        padding: 10px;
+        text-decoration: none;
+    }
+
+    #gc_im .nav-link.active {
+        font-weight: bold;
+    }
+
+    #gc_im figcaption {
+        text-align: center;
+        padding-top: 20px;
+    }
+
+    @media screen and (max-width: 1024px) {
+        #gc_im .product_display_section {
+            flex-direction: column;
+        }
+
+        #gc_im .four_col {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        #gc_im .four_col_where {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+
+        #gc_im .tabcontent {
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        #gc_im #replace .icon_section,
+        #gc_im #refresh .icon_section {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    #gc_im .nav-placeholder {
+        height: 0;
+        transition: height 0.3s ease;
+    }
+
+    #gc_im .four_col_no_gap {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 10px;
+    }
+
+    #gc_im select {
+        width: 250px;
+        height: 40px;
+        -webkit-padding-end: 20px;
+        -moz-padding-end: 20px;
+        -webkit-padding-start: 2px;
+        -moz-padding-start: 2px;
+        -webkit-appearance: button;
+        -moz-appearance: button;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background-color: #eeeeef;
+        background-image: url("/content/themes/genesis/assets/images/select-arrow.svg"),
+            linear-gradient(180deg, #eeeeef, #eeeeef);
+        background-position: 100%;
+        background-repeat: no-repeat;
+        border: 1px solid #aaa;
+        border-radius: 2px;
+        font-size: inherit;
+        margin: 0;
+        min-width: 260px;
+        overflow: hidden;
+        padding: 7px 20px;
+        text-indent: 0.01px;
+        text-overflow: ellipsis;
+        text-overflow: "";
+        white-space: nowrap;
+    }
+
+    #gc_im .full_page {
+        height: 100vh;
+        width: 100%;
+    }
+
+    #gc_im .where_to_buy {
+        text-align: center;
+        margin: 100px auto 20px auto;
+    }
+
+    #gc_im .where_to_buy_btn {
+        margin-top: 30px;
+
+        background: transparent;
+        border: none;
+        outline: none;
+        color: #78be21;
+    }
+
+    #gc_im .tooltip {
+        position: relative;
+        display: inline-block;
+    }
+
+    #gc_im .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: #5bbac7;
+        color: #f3f3f3;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 4px;
+        position: absolute;
+        z-index: 1;
+        bottom: 100%;
+        left: 50%;
+        margin-left: -60px;
+        opacity: 0;
+        transition: opacity 0.3s;
+        margin-bottom: 5px;
+    }
+
+    #gc_im .tooltip:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    /* Arrow design */
+    #gc_im .tooltip .tooltiptext::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #5bbac7 transparent transparent transparent;
+    }
+
+    #gc_im .product_display_section {
+        background-color: #ebebeb;
+        padding: 50px;
+    }
+
+    #gc_im .collection_selection {
+        margin-top: 20px;
+    }
+
+    @media screen and (max-width: 768px) {
+        #gc_im .tab_headline {
+            max-width: 100%;
+            margin-top: 5rem;
+        }
+
+        #reface,
+        #replace,
+        #refresh,
+        #gc_im #where-to-buy {
+            margin: 50px 20px;
+        }
+
+        #gc_im #replace .two_col_mobile {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        #gc_im #reface {
+            margin: auto;
+        }
+
+        #gc_im .gm_im_sticky-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        #gc_im .fixed-nav {
+            top: 100px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        #gc_im .tab li {
+            padding: 5px;
+            margin: 0px;
+        }
+
+        #gc_im .gm_im_sticky-nav {
+            grid-gap: 0px;
+        }
+
+        #gc_im .gm_im_sticky-nav a {
+            letter-spacing: 0;
+            padding: 0 !important;
+        }
+    }
+
+    #gc_im #where-to-buy {
+        padding: 0 0 50px 0;
+        margin-bottom: 0;
+    }
+
+    #gc_im .active_swatch {
+        border: 2px solid #78be21;
+    }
+
+    #gc_im .select_swatch {
+        text-align: left;
+        margin: 10px 0;
+    }
+
+    #gc_im .backsplash_selection .four_col_no_gap {
+        margin: 0;
+    }
+
+    #gc_im .backsplash_selection {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        grid-gap: 5px;
+        justify-content: center;
+        height: 100%;
+    }
+
+
+
+    #gc_im .fade-in {
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    #gc_im .fade-in.active {
+        opacity: 1;
+    }
+
+    #gc_im .collection {
+        text-align: left;
+    }
+</style>
+
+<div id="gc_im" class="main">
+
+    <div class="gm_im_sticky-nav tab">
+        <li><a href="#reface" class="nav-link tablinks active">Reface</a></li>
+        <li><a href="#replace" class="nav-link tablinks">Replace</a></li>
+        <li><a href="#refresh" class="nav-link tablinks">Refresh</a></li>
+        <li style="border-left: 2px solid #fff;"><a href="#where-to-buy" class="nav-link tablinks">Where To Buy</a>
+        </li>
+    </div>
+    <div class="nav-placeholder"></div>
+    <section id="reface">
+        <div class="max-width">
+            <h2 style="padding-bottom: 20px;"><strong>RE</strong>FACE</h2>
+            <p class="reface tab_headline">
+                Genesis RE<span>VIVE</span> kits are designed specifically to overlay RV cabinets and walls for a
+                fresh look that’s made to last.
+            </p>
+
+            <article class="icon_section four_col">
+                <figure class="icon_card">
+                    <img class="icon" loading="lazy" data-src="/content/uploads/2023/07/Swatch_Green.png"
+                        alt="On-Trend Design" />
+                    <figcaption>
+                        <strong>ON-TREND DESIGN</strong>
+                        <p>Choose from trending colors or beautifully detailed woodgrains</p>
+                    </figcaption>
+                </figure>
+
+                <figure class="icon_card">
+                    <img class="icon" loading="lazy" data-src="/content/uploads/2023/07/Revive-Installation_Green.png"
+                        alt="Easy Applications" />
+                    <figcaption>
+                        <strong>EASY APPLICATIONS</strong>
+                        <p>Peel & stick design for quick installation</p>
+                    </figcaption>
+                </figure>
+
+                <figure class="icon_card">
+                    <img class="icon" loading="lazy" data-src="/content/uploads/2021/04/icon-oem.png"
+                        alt="Save Time & Money" />
+                    <figcaption>
+                        <strong>SAVE TIME & MONEY</strong>
+                        <p>No need for messy painting or costly rip & replace jobs</p>
+                    </figcaption>
+                </figure>
+
+                <figure class="icon_card">
+                    <img class="icon" loading="lazy" data-src="/content/uploads/2023/07/Quality-Stamp_Green.png"
+                        alt="Pro Adhesive" />
+                    <figcaption>
+                        <strong>PRO ADHESIVE</strong>
+                        <p>Withstands on-the-road conditions and resists bubbling to stick for the long haul</p>
+                    </figcaption>
+                </figure>
+            </article>
+
+
+
+            <aside class="product_display_section reface_display_section">
+                <div class="product_categories">
+                    <div class="kit_selection">
+                        <strong>Visualize Your REVIVE Design</strong>
+
+                        <label for="kitDropdown">Select a Kit:</label>
+                        <select id="kitDropdown" onchange="handleKitChange(this.value)">
+                            <option value="cabinet">Cabinet</option>
+                            <option value="wallboard">Wallboard</option>
+                            <option value="ceiling">Ceiling</option>
+                        </select>
+
+                        <label for="collectionDropdown">Select a Collection:</label>
+                        <select id="collectionDropdown">
+                        </select>
+                        <div class="collection_selection" id="cabinetCollections">
+                            <p class="select_swatch">Select a Finish:</p>
+                            <div id="cabinet_wood_collection" class="collection">
+                                <div class="four_col_no_gap">
+                                    <div class="tooltip">
+                                        <img class="swatch_collection" loading="lazy"
+                                            onclick="changeProductImage('cabBirchBark')" data-swatch-key="cabBirchBark"
+                                            data-src="/content/uploads/2024/01/Revive_Cab_BirchBark_Swatch.jpg" />
+                                        <span class="tooltiptext">Birch</span>
+                                    </div>
+                                    <div class="tooltip">
+                                        <img class="swatch_collection" loading="lazy"
+                                            onclick="changeProductImage('cabBlondeWalnut')"
+                                            data-swatch-key="cabBlondeWalnut"
+                                            data-src="/content/uploads/2024/01/Revive_Cab_BlondeWalnut_Swatch.jpg" />
+                                        <span class="tooltiptext">Blonde Walnut</span>
+                                    </div>
+                                    <div class="tooltip">
+                                        <img class="swatch_collection" loading="lazy"
+                                            onclick="changeProductImage('cabGreenOak')" data-swatch-key="cabGreenOak"
+                                            data-src="/content/uploads/2024/01/Revive_Cab_GreenOak_Swatch.jpg" />
+                                        <span class="tooltiptext">Green Oak</span>
+                                    </div>
+                                    <div class="tooltip">
+                                        <img class="swatch_collection" loading="lazy"
+                                            onclick="changeProductImage('cabAlpineAsh')" data-swatch-key="cabAlpineAsh"
+                                            data-src="/content/uploads/2024/01/Revive_Cab_AlpineAsh_Swatch.jpg" />
+                                        <span class="tooltiptext">Alpine Ash</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="cabinet_smooth_collection" class="collection" style="display:none;">
+                                <div class="four_col_no_gap">
+                                    <div class="tooltip">
+                                        <img class="swatch_collection" loading="lazy"
+                                            onclick="changeProductImage('cabDesginerWhite')"
+                                            data-swatch-key="cabDesginerWhite"
+                                            data-src="/content/uploads/2024/01/Revive_Cab_DesginerWhite_Swatch.jpg" />
+                                        <span class="tooltiptext">Designer White</span>
+                                    </div>
+                                    <div class="tooltip">
+                                        <img class="swatch_collection" loading="lazy"
+                                            onclick="changeProductImage('cabStoneGray')" data-swatch-key="cabStoneGray"
+                                            data-src="/content/uploads/2024/01/Revive_Cab_StoneGray_Swatch.jpg" />
+                                        <span class="tooltiptext">Stone Gray</span>
+                                    </div>
+                                    <div class="tooltip">
+                                        <img class="swatch_collection" loading="lazy"
+                                            onclick="changeProductImage('cabMidnightBlue')"
+                                            data-swatch-key="cabMidnightBlue"
+                                            data-src="/content/uploads/2024/01/Revive_Cab_MidnightBlue_Swatch.jpg" />
+                                        <span class="tooltiptext">Midnight Blue</span>
+                                    </div>
+                                    <div class="tooltip">
+                                        <img class="swatch_collection" loading="lazy"
+                                            onclick="changeProductImage('cabMatteBlack')"
+                                            data-swatch-key="cabMatteBlack"
+                                            data-src="/content/uploads/2024/01/Revive_Cab_MatteBlack_Swatch.jpg" />
+                                        <span class="tooltiptext">Matte Black</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="collection_selection" id="wallboardCollections" style="display:none;">
+                            <div id="wallboard_linen_collection" class="collection">
+                                <div class="four_col_no_gap">
+                                    <div class="tooltip">
+                                        <img class="swatch_collection" loading="lazy"
+                                            onclick="changeProductImage('CrispLinen')" data-swatch-key="CrispLinen"
+                                            data-src="/content/uploads/2024/01/Revive_Wall_CrispLinen_Swatch.jpg" />
+                                        <span class="tooltiptext">Crisp Linen</span>
+                                    </div>
+                                    <div class="tooltip">
+                                        <img class="swatch_collection" loading="lazy"
+                                            onclick="changeProductImage('OrganicLinen')" data-swatch-key="OrganicLinen"
+                                            data-src="/content/uploads/2024/01/Revive_Wall_OrganicLinen_Swatch.jpg" />
+                                        <span class="tooltiptext">Organic Linen</span>
+                                    </div>
+                                    <div class="tooltip">
+                                        <img class="swatch_collection" loading="lazy"
+                                            onclick="changeProductImage('GeoLinen')" data-swatch-key="GeoLinen"
+                                            data-src="/content/uploads/2024/01/Revive_Wall_GeoLinen_Swatch.jpg" />
+                                        <span class="tooltiptext">Geo Linen</span>
+                                    </div>
+                                    <div class="tooltip">
+                                        <img class="swatch_collection" loading="lazy"
+                                            onclick="changeProductImage('OatmealLinen')" data-swatch-key="OatmealLinen"
+                                            data-src="/content/uploads/2024/01/Revive_Wall_OatmealLinen_Swatch.jpg" />
+                                        <span class="tooltiptext">Oatmeal Linen</span>
+                                    </div>
+                                    <div class="tooltip">
+                                        <img class="swatch_collection" loading="lazy"
+                                            onclick="changeProductImage('SketchLinen')" data-swatch-key="SketchLinen"
+                                            data-src="/content/uploads/2024/01/Revive_Wall_SketchLinen_Swatch.jpg" />
+                                        <span class="tooltiptext">Sketch Linen</span>
+                                    </div>
+                                    <div class="tooltip">
+                                        <img class="swatch_collection" loading="lazy"
+                                            onclick="changeProductImage('StructuredLinen')"
+                                            data-swatch-key="StructuredLinen"
+                                            data-src="/content/uploads/2024/01/Revive_Wall_StructuredLinen_Swatch.jpg" />
+                                        <span class="tooltiptext">
+                                            Structured Linen
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="wallboard_specialty_collection" class="collection" style="display:none;">
+                                <p>SPECIALTY</p>
+                                <div class="four_col_no_gap">
+                                    <div class="tooltip">
+                                        <img class="swatch_collection" loading="lazy"
+                                            onclick="changeProductImage('GrayCrossway')" data-swatch-key="GrayCrossway"
+                                            data-src="/content/uploads/2024/01/Revive_Wall_GrayCrossway_Swatch.jpg" />
+                                        <span class="tooltiptext">Gray Crossway</span>
+                                    </div>
+                                    <div class="tooltip">
+                                        <img class="swatch_collection" loading="lazy"
+                                            onclick="changeProductImage('SilverPrisim')" data-swatch-key="SilverPrisim"
+                                            data-src="/content/uploads/2024/01/Revive_Wall_SilverPrisim_Swatch.jpg" />
+                                        <span class="tooltiptext">Silver Prism</span>
+                                    </div>
+                                    <div class="tooltip">
+                                        <img class="swatch_collection" loading="lazy"
+                                            onclick="changeProductImage('WhitewashPlankedWood')"
+                                            data-swatch-key="WhitewashPlankedWood"
+                                            data-src="/content/uploads/2024/01/Revive_Wall_WhitewashPlankedWood_Swatch.jpg" />
+                                        <span class="tooltiptext">Whitewash Planked Wood</span>
+                                    </div>
+                                    <div class="tooltip">
+                                        <img class="swatch_collection" loading="lazy"
+                                            onclick="changeProductImage('CharcoalDiamond')"
+                                            data-swatch-key="CharcoalDiamond"
+                                            data-src="/content/uploads/2024/01/Revive_Wall_CharcoalDiamond_Swatch.jpg" />
+                                        <span class="tooltiptext">Charcoal Diamond</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="collection_selection" id="ceilingCollections" style="display:none;">
+                            <div id="ceiling_textured_collection" class="collection">
+                                <p>Textured</p>
+                                <div class="four_col_no_gap">
+                                    <div class="tooltip">
+                                        <img class="swatch_collection" loading="lazy"
+                                            onclick="changeProductImage('PebbledWhite')" data-swatch-key="PebbledWhite"
+                                            data-src="/content/uploads/2024/01/Revive_Ceiling_PebbledWhite_Swatch-Zoom.jpg" />
+                                        <span class="tooltiptext">Pebbled White</span>
+                                    </div>
+                                    <div class="tooltip">
+                                        <img class="swatch_collection" loading="lazy"
+                                            onclick="changeProductImage('ArcticWhite')" data-swatch-key="ArcticWhite"
+                                            data-src="/content/uploads/2024/01/Revive_Ceiling_ArcticWhite_Swatch-Zoom.jpg" />
+                                        <span class="tooltiptext">Arctic White</span>
+                                    </div>
+                                    <div class="tooltip">
+                                        <!-- <img class="swatch_collection" loading="lazy" onclick="changeProductImage('WhitewashPlankedWood')"
+                                            data-swatch-key="WhitewashPlankedWood"
+                                            data-src="/content/uploads/2024/01/Revive_Wall_WhitewashPlankedWood_Swatch.jpg" /> -->
+                                        <span class="tooltiptext"></span>
+                                    </div>
+                                    <div class="tooltip">
+                                        <!-- <img class="swatch_collection" loading="lazy" onclick="changeProductImage('CharcoalDiamond')"
+                                            data-swatch-key="CharcoalDiamond"
+                                            data-src="/content/uploads/2024/01/Revive_Wall_CharcoalDiamond_Swatch.jpg" /> -->
+                                        <span class="tooltiptext"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="icon_card" id="productImageContainer">
+                    <div class="imagePlaceholder"></div>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <div class="page-divider"></div>
+
+    <section id="replace">
+        <div class="max-width">
+            <h2 style="padding-bottom: 20px;"><strong>RE</strong>PLACE</h2>
+            <header>
+                <p class="replace tab_headline">
+                    Want to go all in on your reno? Shake things up with brand new laminate cabinet doors. Pair them
+                    with a matching RE<span>VIVE</span> Cabinet Kit for box face frames and side panels and you’ve
+                    got
+                    yourself a whole new kitchen.
+                </p>
+            </header>
+
+            <div class="icon_section three_col two_col_mobile">
+                <article class="icon_card">
+                    <img class="icon" loading="lazy" data-src="/content/uploads/2023/07/Swatch_Green.png"
+                        alt="On-Trend Design Icon" />
+                    <figcaption>
+                        <strong>ON-TREND DESIGN</strong>
+                        <p>Choose from 5 different profiles & a selection of colors & woodgrains. Pair with a
+                            matching <strong>RE</strong>VIVE kit for a complete new look.
+                        </p>
+                    </figcaption>
+                </article>
+                <article class="icon_card">
+                    <img class="icon" loading="lazy" data-src="/content/uploads/2023/07/Revive-Installation_Green.png"
+                        alt="Easy to Maintain Icon" />
+                    <figcaption>
+                        <strong>EASY TO MAINTAIN</strong>
+                        <p>No additional staining or glazing, easily wipes clean.</p>
+                    </figcaption>
+                </article>
+                <article class="icon_card">
+                    <img class="icon" loading="lazy" data-src="/content/uploads/2021/04/icon-oem.png"
+                        alt="Highly Durable Icon" />
+                    <figcaption>
+                        <strong>HIGHLY DURABLE</strong>
+                        <p>Resists stains, scratches, warping & fading.</p>
+                    </figcaption>
+                </article>
+            </div>
+
+            <div class="icon_section three_col two_col_mobile" style="padding: 20px; background-color: #ebebeb;">
+                <article class="icon_card">
+                    <img class="side_panels" loading="lazy" data-src="/content/uploads/2023/07/Shaker-1-05.png"
+                        alt="Shaker Door Style" />
+                    <p>Shaker</p>
+                </article>
+
+                <article class="icon_card">
+                    <img class="side_panels" loading="lazy" data-src="/content/uploads/2023/07/Thin-Shaker-2-14.png"
+                        alt="Thin Shaker Door Style" />
+                    <p>Thin Shaker</p>
+                </article>
+
+                <article class="icon_card">
+                    <img class="side_panels" loading="lazy" data-src="/content/uploads/2023/07/Traditional-3-15.png"
+                        alt="Traditional Door Style" />
+                    <p>Traditional</p>
+                </article>
+
+                <article class="icon_card">
+                    <img class="side_panels" loading="lazy" data-src="/content/uploads/2023/07/Beveled-Rail-4-16.png"
+                        alt="Beveled Rail Door Style" />
+                    <p>Beveled Rail</p>
+                </article>
+
+                <article class="icon_card">
+                    <img class="side_panels" loading="lazy"
+                        data-src="/content/uploads/2023/07/Contemporary-Slab-5-17.png"
+                        alt="Contemporary Slab Door Style" />
+                    <p>Contemporary Slab</p>
+                </article>
+
+                <article class="icon_card slab_available_colors" style="background-color: #ebebeb;">
+                    <p><strong>Available Colors</strong></p>
+                    <img class="replace_section_swatch_colors" loading="lazy"
+                        data-src="/content/uploads/2023/07/Available-Colors-17.png" alt="Available Colors for Doors" />
+                </article>
+            </div>
+
+        </div>
+    </section>
+
+
+    <div class="page-divider"></div>
+
+
+    <section id="refresh">
+        <div class="max-width">
+            <h2 style="padding-bottom: 20px;"><strong>RE</strong>FRESH</h2>
+            <header>
+                <p class="refresh tab_headline">
+                    As one of the most interacted-with elements of a space, hardware plays a huge role in how you
+                    experience your RV interior. Similarly, an updated and on-trend backsplash makes an immediate
+                    impact on the
+                    overall look and feel of your space.
+                </p>
+            </header>
+
+            <article class="icon_section two_col">
+                <figure class="icon_card">
+                    <img class="icon" loading="lazy" data-src="/content/uploads/2023/07/Quality-Stamp_Green.png"
+                        alt="RV Ready Icon" />
+                    <figcaption><strong>RV READY</strong>
+                        <p>Lightweight and designed to match the standard countertop-to-cabinet height</p>
+                    </figcaption>
+                </figure>
+
+                <figure class="icon_card">
+                    <img class="icon" loading="lazy" data-src="/content/uploads/2021/04/icon-oem.png"
+                        alt="Easy to Install Icon" />
+                    <figcaption><strong>EASY TO INSTALL</strong>
+                        <p>Install with adhesive tape or bonding agent – no grout or thinest needed</p>
+                    </figcaption>
+                </figure>
+            </article>
+
+            <div class="product_display_section backsplash_display_section">
+                <aside id="backsplashImageContainer" class="icon_card">
+                    <div class="imagePlaceholder"></div>
+                </aside>
+
+                <div class="product_categories">
+                    <div class="backsplash_selection" id="backsplashCollections">
+                        <strong>Visualize Your REVIVE Design</strong>
+                        <p class="select_swatch">Select Your Backsplash:</p>
+                        <ul class="four_col_no_gap">
+                            <li class="tooltip"><img onclick="changeBacksplashImage('SubwayWhiteGrout')"
+                                    class="backsplash_collection" data-swatch-key="SubwayWhiteGrout" loading="lazy"
+                                    data-src="/content/uploads/2024/01/Revive_Backsplash_SubwayWhiteGrout_Swatch.jpg"
+                                    alt="White Subway Tile" />
+                                <span class="tooltiptext">White Subway Tile</span>
+                                </button>
+                            </li>
+                            <li class="tooltip"><img onclick="changeBacksplashImage('GrayMarble')"
+                                    data-swatch-key="GrayMarble" class="backsplash_collection" loading="lazy"
+                                    data-src="/content/uploads/2024/01/Revive_Backsplash_GrayMarble_Swatch.jpg"
+                                    alt="Gray Marble" />
+                                <span class="tooltiptext">Gray Marble</span>
+                                </button>
+                            </li>
+                            <li class="tooltip"><img onclick="changeBacksplashImage('CoastalBlue')"
+                                    data-swatch-key="CoastalBlue" class="backsplash_collection" loading="lazy"
+                                    data-src="/content/uploads/2024/01/Revive_Backsplash_CoastalBlue_Swatch.jpg"
+                                    alt="Coastal Blue" />
+                                <span class="tooltiptext">Coastal Blue</span>
+                                </button>
+                            </li>
+                            <li class="tooltip"><img onclick="changeBacksplashImage('HexWood')"
+                                    data-swatch-key="HexWood" class="backsplash_collection" loading="lazy"
+                                    data-src="/content/uploads/2024/01/Revive_Backsplash_HexWood_Swatch.jpg"
+                                    alt="Hex Wood" />
+                                <span class="tooltiptext">Hex Wood</span>
+                                </button>
+                            </li>
+                            <li class="tooltip"><img onclick="changeBacksplashImage('WhitePickett')"
+                                    data-swatch-key="WhitePickett" class="backsplash_collection" loading="lazy"
+                                    data-src="/content/uploads/2024/01/Revive_Backsplash_WhitePickett_Swatch.jpg"
+                                    alt="White Pickett" />
+                                <span class="tooltiptext">White Pickett</span>
+                                </button>
+                            </li>
+                            <li class="tooltip"><img onclick="changeBacksplashImage('ToastedMarshmallow')"
+                                    data-swatch-key="ToastedMarshmallow" class="backsplash_collection" loading="lazy"
+                                    data-src="/content/uploads/2024/01/Revive_Backsplash_ToastedMarshmallow_Swatch.jpg"
+                                    alt="Toasted Marshmallow" />
+                                <span class="tooltiptext">Toasted Marshmallow</span>
+                                </button>
+                            </li>
+                            <li class="tooltip"><img onclick="changeBacksplashImage('AgedStone')"
+                                    data-swatch-key="AgedStone" class="backsplash_collection" loading="lazy"
+                                    data-src="/content/uploads/2024/01/Revive_Backsplash_AgedStone_Swatch.jpg"
+                                    alt="Aged Stone" />
+                                <span class="tooltiptext">Aged Stone</span>
+                                </button>
+                            </li>
+                            <li class="tooltip"><img onclick="changeBacksplashImage('OliveClayPicket')"
+                                    data-swatch-key="OliveClayPicket" class="backsplash_collection" loading="lazy"
+                                    data-src="/content/uploads/2024/01/Revive_Backsplash_OliveClayPicket_Swatch.jpg"
+                                    alt="Olive Clay Picket" />
+                                <span class="tooltiptext">Olive Clay Picket</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <p><strong>Hardware</strong></p>
+            <!-- <p><strong>Collections</strong></p> -->
+            <div class="hardware-grid-container">
+                <div class="hardware-grid-item">
+                    <img class="hardware-grid-img" loading="lazy"
+                        data-src="/content/uploads/2024/01/Revive_Hardware_Acadia_PolishedChrome.jpg"
+                        alt="Acadia Polished Chrome" title="Acadia Polished Chrome">
+                    <p class="hardware-label">Acadia</p>
+                </div>
+                <div class="hardware-grid-item">
+                    <img class="hardware-grid-img" loading="lazy"
+                        data-src="/content/uploads/2024/01/Revive_Hardware_Arches_PolishedChrome.jpg"
+                        alt="Arches Polished Chrome" title="Arches Polished Chrome">
+                    <p class="hardware-label">Arches</p>
+                </div>
+                <div class="hardware-grid-item">
+                    <img class="hardware-grid-img" loading="lazy"
+                        data-src="/content/uploads/2024/01/Revive_Hardware_Rainier_PolishedChrome.jpg"
+                        alt="Rainier Polished Chrome" title="Rainier Polished Chrome">
+                    <p class="hardware-label">Rainier</p>
+                </div>
+                <div class="hardware-grid-item">
+                    <img class="hardware-grid-img" loading="lazy"
+                        data-src="/content/uploads/2024/01/Revive_Hardware_Sequoia_PolishedChrome.jpg"
+                        alt="Sequoia Polished Chrome" title="Sequoia Polished Chrome">
+                    <p class="hardware-label">Sequoia</p>
+                </div>
+                <div class="hardware-grid-item">
+                    <img class="hardware-grid-img" loading="lazy"
+                        data-src="/content/uploads/2024/01/Revive_Hardware_Sedona_PolishedChrome.jpg"
+                        alt="Sedona Polished Chrome" title="Sedona Polished Chrome">
+                    <p class="hardware-label">Sedona</p>
+                </div>
+                <div class="hardware-grid-item">
+                    <img class="hardware-grid-img" loading="lazy"
+                        data-src="/content/uploads/2024/01/Revive_Hardware_Tahoe_PolishedChrome.jpg"
+                        alt="Tahoe Polished Chrome" title="Tahoe Polished Chrome">
+                    <p class="hardware-label">Tahoe</p>
+                </div>
+                <div class="hardware-grid-item">
+                    <img class="hardware-grid-img" loading="lazy"
+                        data-src="/content/uploads/2024/01/Revive_Hardware_KnobSquare_PolishedChrome.jpg"
+                        alt="Square Knob Polished Chrome" title="Square Knob Polished Chrome">
+                    <p class="hardware-label center-label">Square Knob</p>
+                </div>
+                <div class="hardware-grid-item">
+                    <img class="hardware-grid-img" loading="lazy"
+                        data-src="/content/uploads/2024/01/Revive_Hardware_KnobRound_PolishedChrome.jpg"
+                        alt="Round Knob Polished Chrome" title="Round Knob Polished Chrome">
+                    <p class="hardware-label center-label">Round Knob</p>
+                </div>
+            </div>
+            <div class="hardware-grid-container">
+                <div class="hardware-grid-item">
+                    <img class="hardware-grid-img" loading="lazy"
+                        data-src="/content/uploads/2024/01/Revive_Hardware_KnobRound_AntiqueBronze.jpg"
+                        alt="Antique Bronze" title="Antique Bronze">
+                    <p class="hardware-label center-label">Antique Bronze</p>
+                </div>
+                <div class="hardware-grid-item">
+                    <img class="hardware-grid-img" loading="lazy"
+                        data-src="/content/uploads/2024/01/Revive_Hardware_KnobRound_GoldSatin.jpg" alt="Gold Satin"
+                        title="Gold Satin">
+                    <p class="hardware-label center-label">Gold Satin</p>
+                </div>
+                <div class="hardware-grid-item">
+                    <img class="hardware-grid-img" loading="lazy"
+                        data-src="/content/uploads/2024/01/Revive_Hardware_KnobRound_MatteBlack.jpg" alt="Matte Black"
+                        title="Matte Black">
+                    <p class="hardware-label center-label">Matte Black</p>
+                </div>
+                <div class="hardware-grid-item">
+                    <img class="hardware-grid-img" loading="lazy"
+                        data-src="/content/uploads/2024/01/Revive_Hardware_KnobRound_PolishedChrome.jpg"
+                        alt="Polished Chrome" title="Polished Chrome">
+                    <p class="hardware-label center-label">Polished Chrome</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <div class="page-divider"></div>
+    <section id="where-to-buy">
+        <div class="max-width">
+            <header>
+                <h2 class="where_to_buy tab_headline">Where to Buy</h2>
+                <p>Find us at these exclusive distributors</p>
+            </header>
+            <nav class="icon_section four_col four_col_where">
+                <figure class="icon_card">
+                    <img class="icon" loading="lazy" data-src="/content/uploads/2023/07/Swatch_Green.png"
+                        alt="Icon Description" />
+                    <figcaption>
+                        <a class="where_to_buy_btn" href="#">Partner #1</a>
+                    </figcaption>
+                </figure>
+                <figure class="icon_card">
+                    <img class="icon" loading="lazy" data-src="/content/uploads/2023/07/Revive-Installation_Green.png"
+                        alt="Icon Description" />
+                    <figcaption>
+                        <a class="where_to_buy_btn" href="#">Partner #2</a>
+                    </figcaption>
+                </figure>
+                <figure class="icon_card">
+                    <img class="icon" loading="lazy" data-src="/content/uploads/2021/04/icon-oem.png"
+                        alt="Icon Description" />
+                    <figcaption>
+                        <a class="where_to_buy_btn" href="#">Partner #3</a>
+                    </figcaption>
+                </figure>
+                <figure class="icon_card">
+                    <img class="icon" loading="lazy" data-src="/content/uploads/2023/07/Quality-Stamp_Green.png"
+                        alt="Icon Description" />
+                    <figcaption>
+                        <a class="where_to_buy_btn" href="#">Partner #4</a>
+                    </figcaption>
+                </figure>
+            </nav>
+        </div>
+    </section>
+
+</div>
+</body>
+<script>
+    // DROPDOWN LOGIC //
+    const collections = {
+        cabinet: ['Cabinet Wood Collection', 'Cabinet Smooth Collection'],
+        wallboard: ['Wallboard Linen Collection', 'Wallboard Specialty Collection'],
+        ceiling: ['Ceiling Textured Collection']
+    };
+
+    function updateCollectionDropdown(kit) {
+        const collectionDropdown = document.getElementById('collectionDropdown');
+        collectionDropdown.innerHTML = '';
+
+        collections[kit].forEach((collection) => {
+            const option = document.createElement('option');
+            option.value = collection.toLowerCase().replace(/\s+/g, '_');
+            option.textContent = collection;
+            collectionDropdown.appendChild(option);
+        });
+
+        collectionDropdown.onchange = () => {
+            const selectedCollection = collectionDropdown.value;
+            handleCollectionChange(selectedCollection);
+            setDefaultSwatch(selectedCollection);
+        };
+
+        collectionDropdown.dispatchEvent(new Event('change'));
+    }
+
+    function handleCollectionChange(selectedCollection) {
+        document.querySelectorAll('.collection_selection .collection').forEach(coll => {
+            coll.style.display = 'none';
+        });
+
+        const selectedColl = document.getElementById(selectedCollection);
+        if (selectedColl) {
+            selectedColl.style.display = 'block';
+        }
+    }
+
+    function setDefaultSwatch(collectionId) {
+        const collectionContainer = document.getElementById(collectionId);
+        if (collectionContainer) {
+            const firstSwatch = collectionContainer.querySelector('.swatch_collection');
+            if (firstSwatch) {
+                firstSwatch.classList = firstSwatch.classList += " active_swatch"
+                changeProductImage(firstSwatch.getAttribute('data-swatch-key'));
+            }
+        }
+    }
+    document.querySelectorAll('.swatch_collection').forEach(item => {
+        item.addEventListener("click", () => {
+            document.querySelectorAll('.swatch_collection').forEach(newItem => {
+                newItem.classList.remove("active_swatch");
+            });
+
+            item.classList.add("active_swatch");
+
+        });
+    });
+
+    document.querySelectorAll('.backsplash_collection').forEach(item => {
+        item.addEventListener("click", () => {
+            document.querySelectorAll('.backsplash_collection').forEach(newItem => {
+                newItem.classList.remove("active_swatch");
+            });
+
+            item.classList.add("active_swatch");
+        });
+    });
+
+
+    function handleKitChange(selectedKit) {
+        document.getElementById('cabinetCollections').style.display = selectedKit === 'cabinet' ? 'block' : 'none';
+        document.getElementById('wallboardCollections').style.display = selectedKit === 'wallboard' ? 'block' : 'none';
+        document.getElementById('ceilingCollections').style.display = selectedKit === 'ceiling' ? 'block' : 'none';
+        updateCollectionDropdown(selectedKit);
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const kitDropdown = document.getElementById('kitDropdown');
+        kitDropdown.value = 'cabinet';
+        handleKitChange(kitDropdown.value);
+    });
+
+    // CAROUSEL LOGIC //
+    const swatchToImagesMap = {
+        cabBirchBark: [
+            "/content/uploads/2024/01/Revive_Cab_BirchBrak.jpg",
+            // "/content/uploads/2024/01/Revive_Cab_BirchBark_Limbo.jpg"
+        ],
+        cabBlondeWalnut: [
+            "/content/uploads/2024/01/Revive_Cab_BlondeWalnut.jpg",
+            // "/content/uploads/2024/01/Revive_Cab_BlondeWalnut_Limbo.jpg"
+        ],
+        cabGreenOak: [
+            "/content/uploads/2024/01/Revive_Cab_GreenOak.jpg",
+            // "/content/uploads/2024/01/Revive_Cab_GreenOak_Limbo.jpg"
+        ],
+        cabAlpineAsh: [
+            "/content/uploads/2024/01/Revive_Cab_AlpineAsh.jpg",
+            // "/content/uploads/2024/01/Revive_Cab_AlpineAsh_Limbo_Limbo.jpg"
+        ],
+        cabDesginerWhite: [
+            "/content/uploads/2024/01/Revive_Cab_DesignerWhite.jpg",
+            // "/content/uploads/2024/01/Revive_Cab_DesignerWhite_Limbo.jpg"
+        ],
+        cabStoneGray: [
+            "/content/uploads/2024/01/Revive_Cab_StoneGray.jpg",
+            // "/content/uploads/2024/01/Revive_Cab_StoneGray_Limbo.jpg"
+        ],
+        cabMidnightBlue: [
+            "/content/uploads/2024/01/Revive_Cab_MidnightBlue.jpg",
+            // "/content/uploads/2024/01/Revive_Cab_MidnightBlue_Limbo.jpg"
+        ],
+        cabMatteBlack: [
+            "/content/uploads/2024/01/Revive_Cab_MatteBlk.jpg",
+            // "/content/uploads/2024/01/Revive_Cab_MatteBlack_Limbo.jpg"
+        ],
+
+        CrispLinen: [
+            "/content/uploads/2024/01/Revive_Wall_CrispLinen.jpg",
+        ],
+        OrganicLinen: [
+            "/content/uploads/2024/01/Revive_Wall_OrganicLinen.jpg",
+        ],
+        GeoLinen: [
+            "/content/uploads/2024/01/Revive_Wall_GeoLinen.jpg",
+        ],
+        OatmealLinen: [
+            "/content/uploads/2024/01/Revive_Wall_OatmealLinen.jpg",
+        ],
+        SketchLinen: [
+            "/content/uploads/2024/01/Revive_Wall_SketchLinen.jpg",
+        ],
+        StructuredLinen: [
+            "/content/uploads/2024/01/Revive_Wall_StructuredLinen.jpg",
+        ],
+        GrayCrossway: [
+            "/content/uploads/2024/01/Revive_Wall_GrayCrossway.jpg",
+        ],
+        SilverPrisim: [
+            "/content/uploads/2024/01/Revive_Wall_SilverPrisim.jpg",
+        ],
+        WhitewashPlankedWood: [
+            "/content/uploads/2024/01/Revive_Wall_WhitewashPlankedWood.jpg",
+        ],
+        CharcoalDiamond: [
+            "/content/uploads/2024/01/Revive_Wall_CharcoalDiamond.jpg",
+        ],
+
+        PebbledWhite: [
+            "/content/uploads/2024/01/Revive_Ceiling_PebbledWhite.jpg"
+        ],
+        ArcticWhite: [
+            "/content/uploads/2024/01/Revive_Ceiling_ArcticWhite_Kitchen2.jpg"
+        ],
+    };
+
+    const backsplashImagesMap = {
+        SubwayWhiteGrout: [
+            "/content/uploads/2024/01/Revive_BackSplash_SubwayWhiteGrout.jpg",
+        ],
+        GrayMarble: [
+            "/content/uploads/2024/01/Revive_BackSplash_GrayMarble.jpg",
+        ],
+        CoastalBlue: [
+            "/content/uploads/2024/01/Revive_BackSplash_CoastalBlue.jpg",
+        ],
+        HexWood: [
+            "/content/uploads/2024/01/Revive_BackSplash_HexWood.jpg",
+        ],
+        WhitePickett: [
+            "/content/uploads/2024/01/Revive_Backsplash_WhitePickett.jpg",
+        ],
+        ToastedMarshmallow: [
+            "/content/uploads/2024/01/Revive_Backsplash_ToastedMarshmallow.jpg",
+        ],
+        AgedStone: [
+            "/content/uploads/2024/01/Revive_Backsplash_AgedStone.jpg",
+        ],
+        OliveClayPicket: [
+            "/content/uploads/2024/01/Revive_Backsplash_OlivePickett.jpg",
+        ],
+    };
+
+    function changeProductImage(swatchKey) {
+        const images = swatchToImagesMap[swatchKey];
+        const container = document.getElementById('productImageContainer');
+
+        const existingImg = container.querySelector('img');
+        if (existingImg) {
+            container.removeChild(existingImg);
+        }
+
+        if (images.length > 1) {
+            // If more than one image, create a carousel
+            const carousel = createCarousel(images);
+            container.appendChild(carousel);
+        } else {
+            // For a single image
+            const img = new Image();
+            img.className = 'product_img fade-in';
+
+            // Handle lazy loading for browsers that don't support it natively
+            if (!('loading' in HTMLImageElement.prototype)) {
+                img.setAttribute('data-src', images[0]);
+                let lazyImageObserver = new IntersectionObserver(function (entries, observer) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            let lazyImage = entry.target;
+                            lazyImage.src = lazyImage.getAttribute('data-src');
+                            lazyImage.classList.remove("lazy");
+                            lazyImageObserver.unobserve(lazyImage);
+                        }
+                    });
+                }, { threshold: 0.01 });
+                lazyImageObserver.observe(img);
+            } else {
+                // For browsers that support lazy loading
+                img.loading = 'lazy';
+                img.src = images[0];
+            }
+
+            // Append the image to the container
+            container.appendChild(img);
+
+            // Add the 'active' class once the image is loaded
+            img.onload = () => {
+                img.classList.add('active');
+            };
+        }
+    }
+
+    function changeBacksplashImage(swatchKey) {
+        const images = backsplashImagesMap[swatchKey];
+        const container = document.getElementById('backsplashImageContainer');
+
+        const existingImg = container.querySelector('img');
+        if (existingImg) {
+            container.removeChild(existingImg);
+        }
+
+        if (images.length > 1) {
+            // If more than one image, create a carousel
+            const carousel = createCarousel(images);
+            container.appendChild(carousel);
+        } else {
+            // For a single image
+            const img = new Image();
+            img.className = 'product_img fade-in';
+
+            // Handle lazy loading for browsers that don't support it natively
+            if (!('loading' in HTMLImageElement.prototype)) {
+                img.setAttribute('data-src', images[0]);
+                let lazyImageObserver = new IntersectionObserver(function (entries, observer) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            let lazyImage = entry.target;
+                            lazyImage.src = lazyImage.getAttribute('data-src');
+                            lazyImage.classList.remove("lazy");
+                            lazyImageObserver.unobserve(lazyImage);
+                        }
+                    });
+                }, { threshold: 0.01 });
+                lazyImageObserver.observe(img);
+            } else {
+                // For browsers that support lazy loading
+                img.loading = 'lazy';
+                img.src = images[0];
+            }
+
+            // Append the image to the container
+            container.appendChild(img);
+
+            // Add the 'active' class once the image is loaded
+            img.onload = () => {
+                img.classList.add('active');
+            };
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const backsplash_collection = document.querySelectorAll(".backsplash_collection")?.[0]
+
+        const backsplash = backsplash_collection.getAttribute("data-swatch-key")
+        changeBacksplashImage(backsplash);
+
+        document.querySelectorAll('.backsplash_collection').forEach((newItem, idx) => {
+
+            if (idx == 0) newItem.classList.add("active_swatch");
+        });
+    });
+
+    function createCarousel(imageUrls) {
+        const carousel = document.createElement('div');
+        carousel.className = 'carousel';
+
+        imageUrls.forEach((url, index) => {
+            const img = document.createElement('img');
+            img.src = url;
+            img.className = index === 0 ? 'carousel-item active' : 'carousel-item';
+            carousel.appendChild(img);
+        });
+
+        const prevButton = document.createElement('button');
+        prevButton.innerText = 'Prev';
+        prevButton.className = 'carousel-control';
+        prevButton.onclick = () => navigateCarousel(carousel, 'prev');
+
+        const nextButton = document.createElement('button');
+        nextButton.innerText = 'Next';
+        nextButton.className = 'carousel-control';
+        nextButton.onclick = () => navigateCarousel(carousel, 'next');
+
+        const controls = document.createElement('div');
+        controls.className = 'carousel-controls';
+        controls.appendChild(prevButton);
+        controls.appendChild(nextButton);
+
+        carousel.appendChild(controls);
+
+        return carousel;
+    }
+
+    function navigateCarousel(carousel, direction) {
+        const items = carousel.querySelectorAll('.carousel-item');
+        let activeIndex = Array.from(items).findIndex(item => item.classList.contains('active'));
+
+        items[activeIndex].classList.remove('active');
+
+        if (direction === 'next') {
+            activeIndex = activeIndex + 1 >= items.length ? 0 : activeIndex + 1;
+        } else {
+            activeIndex = activeIndex - 1 < 0 ? items.length - 1 : activeIndex - 1;
+        }
+
+        items[activeIndex].classList.add('active');
+    }
+
+    // STICKY NAV //
+    document.addEventListener('DOMContentLoaded', () => {
+        const nav = document.querySelector('#gc_im .gm_im_sticky-nav');
+        const reface_container = document.querySelector('#gc_im');
+        const navPlaceholder = document.querySelector('#gc_im .nav-placeholder');
+        const navLinks = document.querySelectorAll('#gc_im .nav-link');
+        const initialTop = reface_container.offsetTop - 55;
+        const refaceContainerTop = reface_container.offsetTop; // Distance from the top of the offset parent
+        const refaceContainerHeight = reface_container.clientHeight; // Height of the reface_container
+
+        // The position of the bottom of the reface_container relative to its offset parent
+        const refaceContainerBottom = refaceContainerTop + refaceContainerHeight;
+
+
+
+        function adjustNavPlaceholderHeight() {
+            if (nav.classList.contains('fixed-nav')) {
+                navPlaceholder.style.height = `0px`;
+            } else {
+                navPlaceholder.style.height = '0px';
+            }
+        }
+
+        function toggleStickyNav() {
+            const fromTop = window.scrollY;
+
+            if (fromTop >= initialTop && fromTop < refaceContainerBottom) {
+                nav.classList.add('fixed-nav');
+            } else {
+                nav.classList.remove('fixed-nav');
+            }
+            adjustNavPlaceholderHeight();
+        }
+
+        function highlightLink() {
+            let currentSection = '';
+            const fromTop = window.scrollY - window.innerHeight + nav.offsetHeight
+
+            navLinks.forEach(link => {
+                const section = document.querySelector(link.getAttribute('href'));
+                const sectionTop = section.offsetTop;
+
+                if (fromTop >= sectionTop - nav.offsetHeight) {
+                    currentSection = link.getAttribute('href');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === currentSection) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                if (!nav.classList.contains("fixed-nav")) nav.classList.add('fixed-nav');
+                const targetSection = document.querySelector(this.getAttribute('href'));
+                const fromTop = targetSection.offsetTop + window.innerHeight - nav.offsetHeight
+
+                window.scrollTo({
+                    top: fromTop,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            toggleStickyNav();
+            highlightLink();
+        });
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        if ('loading' in HTMLImageElement.prototype) {
+
+            const lazyImages = document.querySelectorAll('img[data-src]');
+            lazyImages.forEach(img => {
+                if (!img.src) {
+                    img.src = img.dataset.src;
+                }
+            });
+        } else {
+
+            let lazyImages = [].slice.call(document.querySelectorAll("img[data-src]"));
+
+            if ("IntersectionObserver" in window) {
+                let lazyImageObserver = new IntersectionObserver(function (entries, observer) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            let lazyImage = entry.target;
+                            lazyImage.src = lazyImage.dataset.src;
+                            lazyImageObserver.unobserve(lazyImage);
+                        }
+                    });
+                });
+
+                lazyImages.forEach(function (lazyImage) {
+                    lazyImageObserver.observe(lazyImage);
+                });
+            }
+        }
+    });
+</script>
