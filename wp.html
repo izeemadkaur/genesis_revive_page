@@ -423,6 +423,7 @@
         margin-top: 3rem;
         display: flex;
         grid-gap: 40px;
+        align-items: center;
     }
 
     #gc_im .reface_display_section {
@@ -769,6 +770,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            grid-gap: 0;
         }
 
         #gc_im .fixed-nav {
@@ -897,9 +899,9 @@
 
     .tab_headline {
         font-size: x-large;
-        margin: 1rem 0 !important;
+        margin: 1rem auto !important;
         max-width: 800px;
-        text-align: left;
+        text-align: center;
     }
 
     .tab_headline span {
@@ -1016,7 +1018,7 @@
             <aside class="product_display_section reface_display_section">
                 <div class="product_categories">
                     <div class="kit_selection">
-                        <strong>Visualize Your REVIVE Design</strong>
+                        <strong style="font-size: 20px;">Visualize Your REVIVE Design</strong>
 
                         <label for="kitDropdown">Select a Kit:</label>
                         <select id="kitDropdown" onchange="handleKitChange(this.value)">
@@ -1389,8 +1391,8 @@
 
                 <div class="product_categories">
                     <div class="backsplash_selection" id="backsplashCollections">
-                        <strong>Visualize Your REVIVE Design</strong>
-                        <p class="select_swatch">Select Your Backsplash:</p>
+                        <strong style="font-size: 20px;">Visualize Your REVIVE Design</strong>
+                        <p class="select_swatch">Select from 8 lightweight backsplash options:</p>
                         <ul class="four_col_no_gap backsplash-grid">
                             <li class="tooltip"><img onclick="changeBacksplashImage('SubwayWhiteGrout')"
                                     class="backsplash_collection" data-swatch-key="SubwayWhiteGrout" loading="lazy"
@@ -1454,6 +1456,7 @@
             </div>
             <br />
             <h3 style="padding-top: 30px;"><strong>Hardware</strong></h3>
+            <p>6 residential-grade hardware collections in 4 different finishes</p>
             <p style="margin-bottom: 0px;"><strong>Collections</strong></p>
             <div class="hardware-grid-container">
                 <div class="hardware-grid-item">
@@ -1578,18 +1581,19 @@
 
 </div>
 
-
 <style>
     .gcmodal {
         display: none;
         position: fixed;
-        z-index: 1;
+        z-index: 100;
         left: 0;
         top: 0;
         width: 100%;
         height: 100%;
         overflow: auto;
         background-color: rgba(0, 0, 0, 0.4);
+        justify-content: center;
+        align-items: center;
     }
 
     .gcmodal-content {
@@ -1640,36 +1644,39 @@
     }
 </style>
 
-
 <div id="gcModal" class="gcmodal">
     <div class="gcmodal-content">
         <span class="close">&times;</span>
-        <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/E5gd68v2urg" frameborder="0"
-            allowfullscreen></iframe>
+        <iframe id="youtubeVideo" width="560" height="315" src="https://www.youtube.com/embed/E5gd68v2urg"
+            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
 </div>
 
-</body>
-
 <script>
-    // MODAL LOGIC
     document.getElementById('videoLink').onclick = function () {
         var gcmodal = document.getElementById('gcModal');
+        var iframe = document.getElementById('youtubeVideo');
         var span = document.getElementsByClassName("close")[0];
 
         gcmodal.style.display = "flex";
+        iframe.src += "?autoplay=1";
 
-        span.onclick = function () {
+        function closeModal() {
             gcmodal.style.display = "none";
+            iframe.src = "https://www.youtube.com/embed/E5gd68v2urg";
         }
+
+        span.onclick = closeModal;
 
         window.onclick = function (event) {
             if (event.target == gcmodal) {
-                gcmodal.style.display = "none";
+                closeModal();
             }
         }
     }
 </script>
+
+
 
 
 <script>
