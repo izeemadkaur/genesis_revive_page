@@ -735,6 +735,15 @@
         margin-top: 10px;
     }
 
+    @media screen and (max-width: 1024px) {
+
+        #gc_im .fixed-nav {
+            position: fixed;
+            top: 100px;
+            left: 0;
+        }
+    }
+
     @media screen and (max-width: 768px) {
         #gc_im .tab_headline {
             max-width: 100%;
@@ -944,7 +953,7 @@
 
     <div class="gm_im_sticky-nav_container">
         <div class="gm_im_sticky-nav tab">
-            <li><a href="#reface" class="nav-link tablinks active">Reface</a></li>
+            <li><a href="#reface" class="nav-link tablinks">Reface</a></li>
             <li><a href="#replace" class="nav-link tablinks">Replace</a></li>
             <li><a href="#refresh" class="nav-link tablinks">Refresh</a></li>
             <!-- <li style="border-left: 2px solid #fff;" class="last-nav-item"><a href="#where-to-buy"
@@ -1959,24 +1968,29 @@
 
         function highlightLink() {
             let currentSection = '';
-            const fromTop = window.scrollY - window.innerHeight + nav.offsetHeight
+            const fromTop = window.pageYOffset;
 
             navLinks.forEach(link => {
                 const section = document.querySelector(link.getAttribute('href'));
+                if (!section) return;
+
+                // Calculate the top position of the section relative to the document
                 const sectionTop = section.offsetTop;
 
-                if (fromTop >= sectionTop - nav.offsetHeight) {
+                // Adjusting for the height of the navigation bar and any additional static top margin
+                if (fromTop >= sectionTop + window.innerHeight - nav.offsetHeight - staticTop - 100) {
                     currentSection = link.getAttribute('href');
                 }
             });
 
             navLinks.forEach(link => {
                 link.classList.remove('active');
-                if (link.getAttribute('href') === currentSection) {
+                if (link.getAttribute('href') === currentSection && currentSection) {
                     link.classList.add('active');
                 }
             });
         }
+
 
         navLinks.forEach(link => {
             link.addEventListener('click', function (e) {
