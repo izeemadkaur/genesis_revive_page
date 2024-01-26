@@ -1,3 +1,7 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
 <style>
     /* background override */
     .siteorigin-panels-stretch {
@@ -7,19 +11,19 @@
     }
 
     .page-divider {
-        margin: 100px 0;
+        margin: 60px 0;
         height: 4px;
         width: 100%;
         background-color: #ebebeb;
     }
 
-    .main {
+    #gc_im {
         margin: 0 auto;
         background-color: #fff;
         position: relative;
         text-align: center;
+        z-index: 1;
     }
-
 
     #gc_im header p {
         max-width: 80%;
@@ -209,6 +213,11 @@
         opacity: 1;
     }
 
+    #gc_im .reface-swatches .tooltip {
+        flex-basis: 15%;
+        box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+    }
+
     /* Media Queries */
     @media (max-width: 768px) {
         .icon_section {
@@ -219,11 +228,24 @@
         .hardware-grid-container {
             grid-template-columns: 1fr 1fr;
         }
+
+        #gc_im .reface-swatches {
+            gap: 10px;
+            justify-content: center !important;
+        }
+
+        #gc_im .reface-swatches .tooltip {
+            flex-basis: 30%;
+        }
     }
 
     #gc_im body {
         font-family: Arial;
         background-color: #ebebeb;
+    }
+
+    #gc_im img {
+        border-radius: 4px;
     }
 
     #gc_im .gm_im_sticky-nav li {
@@ -312,8 +334,8 @@
     }
 
     #gc_im .tab li {
-        margin: 10px 0;
-        padding: 5px 20px;
+        margin: 15px 0;
+        padding: 0px 20px;
     }
 
     #gc_im .tab a {
@@ -326,6 +348,14 @@
         font-size: 17px;
         color: #fff;
         text-transform: uppercase;
+    }
+
+    #gc_im .last-nav-item {
+        padding-left: 80px !important;
+    }
+
+    #gc_im .backsplash-grid {
+        padding-left: 0px;
     }
 
     #gc_im .tabcontent {
@@ -351,6 +381,8 @@
 
     #gc_im .two_col {
         grid-template-columns: repeat(2, 1fr);
+        max-width: 840px;
+        margin: 0 auto;
     }
 
     #gc_im .three_col {
@@ -394,14 +426,15 @@
     }
 
     #gc_im .reface_display_section {
-        background: linear-gradient(90deg, rgba(245, 245, 245, 1) 0%, rgba(200, 200, 200, 1) 100%);
-        border-left: 4px solid #78be21;
+        background: linear-gradient(90deg, rgba(245, 245, 245, 1) 0%, rgba(225, 225, 225, 1) 100%);
+        border-left: 6px solid #78be21;
         border-radius: 0 10px 10px 0;
     }
 
     #gc_im .backsplash_display_section {
-        border-right: 4px solid #78be21;
+        border-right: 6px solid #78be21;
         border-radius: 10px 0 0 10px;
+        background: linear-gradient(270deg, rgba(245, 245, 245, 1) 0%, rgba(225, 225, 225, 1) 100%);
     }
 
     #gc_im .swatch {
@@ -419,7 +452,7 @@
 
     #gc_im .tooltip {
         width: 100%;
-        font-family: Miller Text Bd, serif;
+        font-family: proxima-nova, sans-serif;
     }
 
     .backsplash_selection,
@@ -452,7 +485,10 @@
         height: auto;
         object-fit: cover;
         aspect-ratio: 16/9;
-        background-color: inherit;
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     #gc_im .kit {
@@ -539,30 +575,11 @@
         display: block;
     }
 
-    #gc_im .carousel-controls {
-        position: absolute;
-        width: 100%;
-        top: 50%;
-        transform: translateY(-50%);
-        display: flex;
-        justify-content: space-between;
-        padding: 0 10px;
-        display: none;
-    }
-
-    #gc_im .carousel-control {
-        background-color: #fff;
-        border: none;
-        cursor: pointer;
-        padding: 5px 10px;
-        font-size: 16px;
-    }
-
     #gc_im .gm_im_sticky-nav {
         box-sizing: border-box;
         width: 100%;
         z-index: 1000;
-        grid-gap: 50px;
+        grid-gap: 80px;
     }
 
     #gc_im .fixed-nav {
@@ -715,7 +732,7 @@
     }
 
     #gc_im .collection_selection {
-        margin-top: 20px;
+        margin-top: 10px;
     }
 
     @media screen and (max-width: 768px) {
@@ -728,7 +745,7 @@
         #replace,
         #refresh,
         #gc_im #where-to-buy {
-            margin: 50px 20px;
+            margin: 0px;
         }
 
         #gc_im #replace .two_col_mobile {
@@ -742,14 +759,16 @@
         #gc_im .gm_im_sticky-nav {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-around;
+            justify-content: center;
         }
 
         #gc_im .fixed-nav {
             top: 100px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
+        }
+
+        #gc_im .gm_im_sticky-nav a:after {
+            bottom: -5px;
+            height: 4px;
         }
 
         #gc_im .tab li {
@@ -757,18 +776,32 @@
             margin: 0px;
         }
 
-        #gc_im .gm_im_sticky-nav {
-            grid-gap: 0px;
-        }
-
         #gc_im .gm_im_sticky-nav a {
             letter-spacing: 0;
-            padding: 0 !important;
+            padding: 0 20px !important;
+            font-size: 14px;
+        }
+
+        #gc_im .last-nav-item {
+            padding-left: 0px !important;
+            border-left: none !important;
+        }
+
+        #gc_im .two_col_mobile {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        /* .tab_headline {
+            padding: 0 20px;
+        } */
+
+        #gc_im section {
+            padding: 0 20px;
         }
     }
 
     #gc_im #where-to-buy {
-        padding: 0 0 50px 0;
+        padding: 0;
         margin-bottom: 0;
     }
 
@@ -808,60 +841,163 @@
     #gc_im .collection {
         text-align: left;
     }
+
+    .gm_im_sticky-nav_container {
+        position: relative;
+        height: 80px;
+    }
+
+    .gm_im_sticky-nav {
+        position: absolute;
+    }
+
+    #navbar .navbar-container {
+        background-color: #fff;
+        box-shadow: 0 !important;
+        width: 100vw !important;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 0 !important;
+    }
+
+    .hero-rotator__content--copy p {
+        font-weight: 400 !important;
+    }
+
+    .hero-rotator__content--copy a {
+        padding: 10px 20px !important;
+        background-color: #fff !important;
+        line-height: 1 !important;
+        border-radius: 6px !important;
+        margin-top: 10px !important;
+        color: #78be21;
+    }
+
+    .hero-rotator__content--copy a:hover {
+        color: #535659 !important;
+    }
+
+    #gc_im #collectionDropdown {
+        margin-bottom: 10px;
+    }
+
+    .fa-play {
+        margin-left: 5px;
+    }
+
+    .tab_headline {
+        font-size: x-large;
+        margin: 1rem 0 !important;
+        max-width: 800px;
+        text-align: left;
+    }
+
+    .tab_headline span {
+        font-weight: 400;
+    }
+
+    .lds-ring {
+        display: inline-block;
+        position: relative;
+        width: 80px;
+        height: 80px;
+    }
+
+    .lds-ring div {
+        box-sizing: border-box;
+        display: block;
+        position: absolute;
+        width: 64px;
+        height: 64px;
+        margin: 8px;
+        border: 8px solid #535659;
+        border-radius: 50%;
+        animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+        border-color: #535659 transparent transparent transparent;
+    }
+
+    .lds-ring div:nth-child(1) {
+        animation-delay: -0.45s;
+    }
+
+    .lds-ring div:nth-child(2) {
+        animation-delay: -0.3s;
+    }
+
+    .lds-ring div:nth-child(3) {
+        animation-delay: -0.15s;
+    }
+
+    @keyframes lds-ring {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
 </style>
 
 <div id="gc_im" class="main">
 
-    <div class="gm_im_sticky-nav tab">
-        <li><a href="#reface" class="nav-link tablinks active">Reface</a></li>
-        <li><a href="#replace" class="nav-link tablinks">Replace</a></li>
-        <li><a href="#refresh" class="nav-link tablinks">Refresh</a></li>
-        <li style="border-left: 2px solid #fff;"><a href="#where-to-buy" class="nav-link tablinks">Where To Buy</a>
-        </li>
+    <div class="gm_im_sticky-nav_container">
+        <div class="gm_im_sticky-nav tab">
+            <li><a href="#reface" class="nav-link tablinks active">Reface</a></li>
+            <li><a href="#replace" class="nav-link tablinks">Replace</a></li>
+            <li><a href="#refresh" class="nav-link tablinks">Refresh</a></li>
+            <!-- <li style="border-left: 2px solid #fff;" class="last-nav-item"><a href="#where-to-buy"
+                    class="nav-link tablinks">Where To Buy</a>
+            </li> -->
+        </div>
     </div>
     <div class="nav-placeholder"></div>
     <section id="reface">
         <div class="max-width">
             <h2 style="padding-bottom: 20px;"><strong>RE</strong>FACE</h2>
             <p class="reface tab_headline">
-                Genesis RE<span>VIVE</span> kits are designed specifically to overlay RV cabinets and walls for a
-                fresh look that’s made to last.
+                <strong>
+                    Genesis RE<span>VIVE</span> kits are designed specifically to overlay RV cabinets and walls for a
+                    fresh look that’s made to last.
+                </strong>
             </p>
 
             <article class="icon_section four_col">
                 <figure class="icon_card">
-                    <img class="icon" loading="lazy" data-src="/content/uploads/2023/07/Swatch_Green.png"
+                    <img class="icon" loading="lazy" data-src="/content/uploads/2023/07/Swatch_Green-150x150.png"
                         alt="On-Trend Design" />
                     <figcaption>
                         <strong>ON-TREND DESIGN</strong>
-                        <p>Choose from trending colors or beautifully detailed woodgrains</p>
+                        <p>Choose from trending colors or beautifully detailed woodgrains.</p>
                     </figcaption>
                 </figure>
 
                 <figure class="icon_card">
-                    <img class="icon" loading="lazy" data-src="/content/uploads/2023/07/Revive-Installation_Green.png"
+                    <img class="icon" loading="lazy"
+                        data-src="/content/uploads/2023/07/Revive-Installation_Green-150x150.png"
                         alt="Easy Applications" />
                     <figcaption>
                         <strong>EASY APPLICATIONS</strong>
-                        <p>Peel & stick design for quick installation</p>
+                        <p>Peel & stick design for quick installation.</p>
                     </figcaption>
                 </figure>
 
                 <figure class="icon_card">
-                    <img class="icon" loading="lazy" data-src="/content/uploads/2021/04/icon-oem.png"
+                    <img class="icon" loading="lazy" data-src="/content/uploads/2021/04/icon-oem-150x150.png"
                         alt="Save Time & Money" />
                     <figcaption>
                         <strong>SAVE TIME & MONEY</strong>
-                        <p>No need for messy painting or costly rip & replace jobs</p>
+                        <p>No need for messy painting or costly rip & replace jobs.</p>
                     </figcaption>
                 </figure>
 
                 <figure class="icon_card">
-                    <img class="icon" loading="lazy" data-src="/content/uploads/2023/07/Quality-Stamp_Green.png"
+                    <img class="icon" loading="lazy" data-src="/content/uploads/2023/07/Quality-Stamp_Green-150x150.png"
                         alt="Pro Adhesive" />
                     <figcaption>
                         <strong>PRO ADHESIVE</strong>
-                        <p>Withstands on-the-road conditions and resists bubbling to stick for the long haul</p>
+                        <p>Withstands on-the-road conditions and resists bubbling to stick for the long haul.</p>
                     </figcaption>
                 </figure>
             </article>
@@ -875,41 +1011,151 @@
 
                         <label for="kitDropdown">Select a Kit:</label>
                         <select id="kitDropdown" onchange="handleKitChange(this.value)">
-                            <option value="cabinet">Cabinet</option>
                             <option value="wallboard">Wallboard</option>
                             <option value="ceiling">Ceiling</option>
+                            <option value="cabinet">Cabinet</option>
                         </select>
 
                         <label for="collectionDropdown">Select a Collection:</label>
                         <select id="collectionDropdown">
                         </select>
-                        <div class="collection_selection" id="cabinetCollections">
+
+                        <div class="collection_selection" id="wallboardCollections">
+                            <p class="select_swatch">Select a Finish:</p>
+                            <div id="wallboard_linen_collection" class="collection">
+                                <div class="four_col_no_gap">
+                                    <div class="tooltip">
+                                        <img class="swatch_collection" loading="lazy"
+                                            onclick="changeProductImage('CrispLinen')" data-swatch-key="CrispLinen"
+                                            data-src="/content/uploads/2024/01/Revive_Wall_CrispLinen_Swatch-1024x1024.jpg" />
+                                        <span class="tooltiptext">Crisp Linen</span>
+                                    </div>
+                                    <div class="tooltip">
+                                        <img class="swatch_collection" loading="lazy"
+                                            onclick="changeProductImage('OrganicLinen')" data-swatch-key="OrganicLinen"
+                                            data-src="/content/uploads/2024/01/Revive_Wall_OrganicLinen_Swatch-1024x1024.jpg" />
+                                        <span class="tooltiptext">Organic Linen</span>
+                                    </div>
+                                    <div class="tooltip">
+                                        <img class="swatch_collection" loading="lazy"
+                                            onclick="changeProductImage('GeoLinen')" data-swatch-key="GeoLinen"
+                                            data-src="/content/uploads/2024/01/Revive_Wall_GeoLinen_Swatch-1024x1024.jpg" />
+                                        <span class="tooltiptext">Geo Linen</span>
+                                    </div>
+                                    <div class="tooltip">
+                                        <img class="swatch_collection" loading="lazy"
+                                            onclick="changeProductImage('OatmealLinen')" data-swatch-key="OatmealLinen"
+                                            data-src="/content/uploads/2024/01/Revive_Wall_OatmealLinen_Swatch-1024x1024.jpg" />
+                                        <span class="tooltiptext">Oatmeal Linen</span>
+                                    </div>
+                                    <div class="tooltip">
+                                        <img class="swatch_collection" loading="lazy"
+                                            onclick="changeProductImage('SketchLinen')" data-swatch-key="SketchLinen"
+                                            data-src="/content/uploads/2024/01/Revive_Wall_SketchLinen_Swatch-1024x1024.jpg" />
+                                        <span class="tooltiptext">Sketch Linen</span>
+                                    </div>
+                                    <div class="tooltip">
+                                        <img class="swatch_collection" loading="lazy"
+                                            onclick="changeProductImage('StructuredLinen')"
+                                            data-swatch-key="StructuredLinen"
+                                            data-src="/content/uploads/2024/01/Revive_Wall_StructuredLinen_Swatch-1024x1024.jpg" />
+                                        <span class="tooltiptext">
+                                            Structured Linen
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="wallboard_specialty_collection" class="collection" style="display:none;">
+                                <div class="four_col_no_gap">
+
+                                    <div class="tooltip">
+                                        <img class="swatch_collection" loading="lazy"
+                                            onclick="changeProductImage('GrayCrossway')" data-swatch-key="GrayCrossway"
+                                            data-src="/content/uploads/2024/01/Revive_Wall_GrayCrossway_Swatch-1024x1024.jpg" />
+                                        <span class="tooltiptext">Gray Crossway</span>
+                                    </div>
+                                    <div class="tooltip">
+                                        <img class="swatch_collection" loading="lazy"
+                                            onclick="changeProductImage('SilverPrisim')" data-swatch-key="SilverPrisim"
+                                            data-src="/content/uploads/2024/01/Revive_Wall_SilverPrisim_Swatch-1024x1024.jpg" />
+                                        <span class="tooltiptext">Silver Prism</span>
+                                    </div>
+                                    <div class="tooltip">
+                                        <img class="swatch_collection" loading="lazy"
+                                            onclick="changeProductImage('WhitewashPlankedWood')"
+                                            data-swatch-key="WhitewashPlankedWood"
+                                            data-src="/content/uploads/2024/01/Revive_Wall_WhitewashPlankedWood_Swatch-1024x1024.jpg" />
+                                        <span class="tooltiptext">Whitewash Planked Wood</span>
+                                    </div>
+                                    <div class="tooltip">
+                                        <img class="swatch_collection" loading="lazy"
+                                            onclick="changeProductImage('CharcoalDiamond')"
+                                            data-swatch-key="CharcoalDiamond"
+                                            data-src="/content/uploads/2024/01/Revive_Wall_CharcoalDiamond_Swatch-1024x1024.jpg" />
+                                        <span class="tooltiptext">Charcoal Diamond</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="collection_selection" id="ceilingCollections" style="display:none;">
+                            <p class="select_swatch">Select a Finish:</p>
+                            <div id="ceiling_textured_collection" class="collection">
+                                <div class="four_col_no_gap">
+
+                                    <div class="tooltip">
+                                        <img class="swatch_collection" loading="lazy"
+                                            onclick="changeProductImage('PebbledWhite')" data-swatch-key="PebbledWhite"
+                                            data-src="/content/uploads/2024/01/Revive_Ceiling_PebbledWhite_Swatch-Zoom-1024x1024.jpg" />
+                                        <span class="tooltiptext">Pebbled White</span>
+                                    </div>
+                                    <div class="tooltip">
+                                        <img class="swatch_collection" loading="lazy"
+                                            onclick="changeProductImage('ArcticWhite')" data-swatch-key="ArcticWhite"
+                                            data-src="/content/uploads/2024/01/Revive_Ceiling_ArcticWhite_Swatch-Zoom-1024x1024.jpg" />
+                                        <span class="tooltiptext">Arctic White</span>
+                                    </div>
+                                    <div class="tooltip">
+                                        <!-- <img class="swatch_collection" loading="lazy" onclick="changeProductImage('WhitewashPlankedWood')"
+                                            data-swatch-key="WhitewashPlankedWood"
+                                            data-src="/content/uploads/2024/01/Revive_Wall_WhitewashPlankedWood_Swatch-1024x1024.jpg" /> -->
+                                        <span class="tooltiptext"></span>
+                                    </div>
+                                    <div class="tooltip">
+                                        <!-- <img class="swatch_collection" loading="lazy" onclick="changeProductImage('CharcoalDiamond')"
+                                            data-swatch-key="CharcoalDiamond"
+                                            data-src="/content/uploads/2024/01/Revive_Wall_CharcoalDiamond_Swatch-1024x1024.jpg" /> -->
+                                        <span class="tooltiptext"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="collection_selection" id="cabinetCollections" style="display:none;">
                             <p class="select_swatch">Select a Finish:</p>
                             <div id="cabinet_wood_collection" class="collection">
                                 <div class="four_col_no_gap">
                                     <div class="tooltip">
                                         <img class="swatch_collection" loading="lazy"
                                             onclick="changeProductImage('cabBirchBark')" data-swatch-key="cabBirchBark"
-                                            data-src="/content/uploads/2024/01/Revive_Cab_BirchBark_Swatch.jpg" />
+                                            data-src="/content/uploads/2024/01/Revive_Cab_BirchBark_Swatch-1024x1024.jpg" />
                                         <span class="tooltiptext">Birch</span>
                                     </div>
                                     <div class="tooltip">
                                         <img class="swatch_collection" loading="lazy"
                                             onclick="changeProductImage('cabBlondeWalnut')"
                                             data-swatch-key="cabBlondeWalnut"
-                                            data-src="/content/uploads/2024/01/Revive_Cab_BlondeWalnut_Swatch.jpg" />
+                                            data-src="/content/uploads/2024/01/Revive_Cab_BlondeWalnut_Swatch-1024x1024.jpg" />
                                         <span class="tooltiptext">Blonde Walnut</span>
                                     </div>
                                     <div class="tooltip">
                                         <img class="swatch_collection" loading="lazy"
                                             onclick="changeProductImage('cabGreenOak')" data-swatch-key="cabGreenOak"
-                                            data-src="/content/uploads/2024/01/Revive_Cab_GreenOak_Swatch.jpg" />
+                                            data-src="/content/uploads/2024/01/Revive_Cab_GreenOak_Swatch-1024x1024.jpg" />
                                         <span class="tooltiptext">Green Oak</span>
                                     </div>
                                     <div class="tooltip">
                                         <img class="swatch_collection" loading="lazy"
                                             onclick="changeProductImage('cabAlpineAsh')" data-swatch-key="cabAlpineAsh"
-                                            data-src="/content/uploads/2024/01/Revive_Cab_AlpineAsh_Swatch.jpg" />
+                                            data-src="/content/uploads/2024/01/Revive_Cab_AlpineAsh_Swatch-1024x1024.jpg" />
                                         <span class="tooltiptext">Alpine Ash</span>
                                     </div>
                                 </div>
@@ -920,135 +1166,28 @@
                                         <img class="swatch_collection" loading="lazy"
                                             onclick="changeProductImage('cabDesginerWhite')"
                                             data-swatch-key="cabDesginerWhite"
-                                            data-src="/content/uploads/2024/01/Revive_Cab_DesginerWhite_Swatch.jpg" />
+                                            data-src="/content/uploads/2024/01/Revive_Cab_DesginerWhite_Swatch-1024x1024.jpg" />
                                         <span class="tooltiptext">Designer White</span>
                                     </div>
                                     <div class="tooltip">
                                         <img class="swatch_collection" loading="lazy"
                                             onclick="changeProductImage('cabStoneGray')" data-swatch-key="cabStoneGray"
-                                            data-src="/content/uploads/2024/01/Revive_Cab_StoneGray_Swatch.jpg" />
+                                            data-src="/content/uploads/2024/01/Revive_Cab_StoneGray_Swatch-1024x1024.jpg" />
                                         <span class="tooltiptext">Stone Gray</span>
                                     </div>
                                     <div class="tooltip">
                                         <img class="swatch_collection" loading="lazy"
                                             onclick="changeProductImage('cabMidnightBlue')"
                                             data-swatch-key="cabMidnightBlue"
-                                            data-src="/content/uploads/2024/01/Revive_Cab_MidnightBlue_Swatch.jpg" />
+                                            data-src="/content/uploads/2024/01/Revive_Cab_MidnightBlue_Swatch-1024x1024.jpg" />
                                         <span class="tooltiptext">Midnight Blue</span>
                                     </div>
                                     <div class="tooltip">
                                         <img class="swatch_collection" loading="lazy"
                                             onclick="changeProductImage('cabMatteBlack')"
                                             data-swatch-key="cabMatteBlack"
-                                            data-src="/content/uploads/2024/01/Revive_Cab_MatteBlack_Swatch.jpg" />
+                                            data-src="/content/uploads/2024/01/Revive_Cab_MatteBlack_Swatch-1024x1024.jpg" />
                                         <span class="tooltiptext">Matte Black</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="collection_selection" id="wallboardCollections" style="display:none;">
-                            <div id="wallboard_linen_collection" class="collection">
-                                <div class="four_col_no_gap">
-                                    <div class="tooltip">
-                                        <img class="swatch_collection" loading="lazy"
-                                            onclick="changeProductImage('CrispLinen')" data-swatch-key="CrispLinen"
-                                            data-src="/content/uploads/2024/01/Revive_Wall_CrispLinen_Swatch.jpg" />
-                                        <span class="tooltiptext">Crisp Linen</span>
-                                    </div>
-                                    <div class="tooltip">
-                                        <img class="swatch_collection" loading="lazy"
-                                            onclick="changeProductImage('OrganicLinen')" data-swatch-key="OrganicLinen"
-                                            data-src="/content/uploads/2024/01/Revive_Wall_OrganicLinen_Swatch.jpg" />
-                                        <span class="tooltiptext">Organic Linen</span>
-                                    </div>
-                                    <div class="tooltip">
-                                        <img class="swatch_collection" loading="lazy"
-                                            onclick="changeProductImage('GeoLinen')" data-swatch-key="GeoLinen"
-                                            data-src="/content/uploads/2024/01/Revive_Wall_GeoLinen_Swatch.jpg" />
-                                        <span class="tooltiptext">Geo Linen</span>
-                                    </div>
-                                    <div class="tooltip">
-                                        <img class="swatch_collection" loading="lazy"
-                                            onclick="changeProductImage('OatmealLinen')" data-swatch-key="OatmealLinen"
-                                            data-src="/content/uploads/2024/01/Revive_Wall_OatmealLinen_Swatch.jpg" />
-                                        <span class="tooltiptext">Oatmeal Linen</span>
-                                    </div>
-                                    <div class="tooltip">
-                                        <img class="swatch_collection" loading="lazy"
-                                            onclick="changeProductImage('SketchLinen')" data-swatch-key="SketchLinen"
-                                            data-src="/content/uploads/2024/01/Revive_Wall_SketchLinen_Swatch.jpg" />
-                                        <span class="tooltiptext">Sketch Linen</span>
-                                    </div>
-                                    <div class="tooltip">
-                                        <img class="swatch_collection" loading="lazy"
-                                            onclick="changeProductImage('StructuredLinen')"
-                                            data-swatch-key="StructuredLinen"
-                                            data-src="/content/uploads/2024/01/Revive_Wall_StructuredLinen_Swatch.jpg" />
-                                        <span class="tooltiptext">
-                                            Structured Linen
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="wallboard_specialty_collection" class="collection" style="display:none;">
-                                <p>SPECIALTY</p>
-                                <div class="four_col_no_gap">
-                                    <div class="tooltip">
-                                        <img class="swatch_collection" loading="lazy"
-                                            onclick="changeProductImage('GrayCrossway')" data-swatch-key="GrayCrossway"
-                                            data-src="/content/uploads/2024/01/Revive_Wall_GrayCrossway_Swatch.jpg" />
-                                        <span class="tooltiptext">Gray Crossway</span>
-                                    </div>
-                                    <div class="tooltip">
-                                        <img class="swatch_collection" loading="lazy"
-                                            onclick="changeProductImage('SilverPrisim')" data-swatch-key="SilverPrisim"
-                                            data-src="/content/uploads/2024/01/Revive_Wall_SilverPrisim_Swatch.jpg" />
-                                        <span class="tooltiptext">Silver Prism</span>
-                                    </div>
-                                    <div class="tooltip">
-                                        <img class="swatch_collection" loading="lazy"
-                                            onclick="changeProductImage('WhitewashPlankedWood')"
-                                            data-swatch-key="WhitewashPlankedWood"
-                                            data-src="/content/uploads/2024/01/Revive_Wall_WhitewashPlankedWood_Swatch.jpg" />
-                                        <span class="tooltiptext">Whitewash Planked Wood</span>
-                                    </div>
-                                    <div class="tooltip">
-                                        <img class="swatch_collection" loading="lazy"
-                                            onclick="changeProductImage('CharcoalDiamond')"
-                                            data-swatch-key="CharcoalDiamond"
-                                            data-src="/content/uploads/2024/01/Revive_Wall_CharcoalDiamond_Swatch.jpg" />
-                                        <span class="tooltiptext">Charcoal Diamond</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="collection_selection" id="ceilingCollections" style="display:none;">
-                            <div id="ceiling_textured_collection" class="collection">
-                                <p>Textured</p>
-                                <div class="four_col_no_gap">
-                                    <div class="tooltip">
-                                        <img class="swatch_collection" loading="lazy"
-                                            onclick="changeProductImage('PebbledWhite')" data-swatch-key="PebbledWhite"
-                                            data-src="/content/uploads/2024/01/Revive_Ceiling_PebbledWhite_Swatch-Zoom.jpg" />
-                                        <span class="tooltiptext">Pebbled White</span>
-                                    </div>
-                                    <div class="tooltip">
-                                        <img class="swatch_collection" loading="lazy"
-                                            onclick="changeProductImage('ArcticWhite')" data-swatch-key="ArcticWhite"
-                                            data-src="/content/uploads/2024/01/Revive_Ceiling_ArcticWhite_Swatch-Zoom.jpg" />
-                                        <span class="tooltiptext">Arctic White</span>
-                                    </div>
-                                    <div class="tooltip">
-                                        <!-- <img class="swatch_collection" loading="lazy" onclick="changeProductImage('WhitewashPlankedWood')"
-                                            data-swatch-key="WhitewashPlankedWood"
-                                            data-src="/content/uploads/2024/01/Revive_Wall_WhitewashPlankedWood_Swatch.jpg" /> -->
-                                        <span class="tooltiptext"></span>
-                                    </div>
-                                    <div class="tooltip">
-                                        <!-- <img class="swatch_collection" loading="lazy" onclick="changeProductImage('CharcoalDiamond')"
-                                            data-swatch-key="CharcoalDiamond"
-                                            data-src="/content/uploads/2024/01/Revive_Wall_CharcoalDiamond_Swatch.jpg" /> -->
-                                        <span class="tooltiptext"></span>
                                     </div>
                                 </div>
                             </div>
@@ -1056,7 +1195,14 @@
                     </div>
                 </div>
                 <div class="icon_card" id="productImageContainer">
-                    <div class="imagePlaceholder"></div>
+                    <div class="imagePlaceholder">
+                        <div class="lds-ring">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
                 </div>
             </aside>
         </div>
@@ -1069,16 +1215,27 @@
             <h2 style="padding-bottom: 20px;"><strong>RE</strong>PLACE</h2>
             <header>
                 <p class="replace tab_headline">
-                    Want to go all in on your reno? Shake things up with brand new laminate cabinet doors. Pair them
-                    with a matching RE<span>VIVE</span> Cabinet Kit for box face frames and side panels and you’ve
-                    got
-                    yourself a whole new kitchen.
+                    <strong>
+                        Want to go all in on your reno? Shake things up with brand new laminate cabinet doors. Pair them
+                        with a matching RE<span>VIVE</span> Cabinet Kit for box face frames and side panels and you’ve
+                        got
+                        yourself a whole new kitchen.
+                    </strong>
                 </p>
             </header>
 
             <div class="icon_section three_col two_col_mobile">
                 <article class="icon_card">
-                    <img class="icon" loading="lazy" data-src="/content/uploads/2023/07/Swatch_Green.png"
+                    <img class="icon" loading="lazy"
+                        data-src="/content/uploads/2023/07/Revive-Installation_Green-150x150.png"
+                        alt="Easy to Maintain Icon" />
+                    <figcaption>
+                        <strong>EASY TO MAINTAIN</strong>
+                        <p>No additional staining or glazing, easily wipes clean.</p>
+                    </figcaption>
+                </article>
+                <article class="icon_card">
+                    <img class="icon" loading="lazy" data-src="/content/uploads/2023/07/Swatch_Green-150x150.png"
                         alt="On-Trend Design Icon" />
                     <figcaption>
                         <strong>ON-TREND DESIGN</strong>
@@ -1088,15 +1245,7 @@
                     </figcaption>
                 </article>
                 <article class="icon_card">
-                    <img class="icon" loading="lazy" data-src="/content/uploads/2023/07/Revive-Installation_Green.png"
-                        alt="Easy to Maintain Icon" />
-                    <figcaption>
-                        <strong>EASY TO MAINTAIN</strong>
-                        <p>No additional staining or glazing, easily wipes clean.</p>
-                    </figcaption>
-                </article>
-                <article class="icon_card">
-                    <img class="icon" loading="lazy" data-src="/content/uploads/2021/04/icon-oem.png"
+                    <img class="icon" loading="lazy" data-src="/content/uploads/2021/04/icon-oem-150x150.png"
                         alt="Highly Durable Icon" />
                     <figcaption>
                         <strong>HIGHLY DURABLE</strong>
@@ -1105,44 +1254,78 @@
                 </article>
             </div>
 
-            <div class="icon_section three_col two_col_mobile" style="padding: 20px; background-color: #ebebeb;">
-                <article class="icon_card">
-                    <img class="side_panels" loading="lazy" data-src="/content/uploads/2023/07/Shaker-1-05.png"
-                        alt="Shaker Door Style" />
-                    <p>Shaker</p>
-                </article>
 
-                <article class="icon_card">
-                    <img class="side_panels" loading="lazy" data-src="/content/uploads/2023/07/Thin-Shaker-2-14.png"
-                        alt="Thin Shaker Door Style" />
-                    <p>Thin Shaker</p>
-                </article>
+            <div style="background-color: #ebebeb;">
+                <p style="padding-top: 20px;"><strong>Available Colors</strong>
+                <div class="reface-swatches"
+                    style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-around;">
+                    <div class="tooltip">
+                        <img class="replace_swatch_collection" loading="lazy" onclick="changeProductImage('CrispLinen')"
+                            data-swatch-key="CrispLinen"
+                            data-src="/content/uploads/2024/01/Revive_Cab_DesginerWhite_Swatch-1024x1024.jpg" />
+                        <span class="tooltiptext">Designer White</span>
+                    </div>
+                    <div class="tooltip">
+                        <img class="replace_swatch_collection" loading="lazy"
+                            onclick="changeProductImage('OrganicLinen')" data-swatch-key="OrganicLinen"
+                            data-src="/content/uploads/2024/01/Revive_Cab_StoneGray_Swatch-1024x1024.jpg" />
+                        <span class="tooltiptext">Stone Gray</span>
+                    </div>
+                    <div class="tooltip">
+                        <img class="replace_swatch_collection" loading="lazy" onclick="changeProductImage('GeoLinen')"
+                            data-swatch-key="GeoLinen"
+                            data-src="/content/uploads/2024/01/Revive_Cab_MidnightBlue_Swatch-1024x1024.jpg" />
+                        <span class="tooltiptext">Midnight Blue</span>
+                    </div>
+                    <div class="tooltip">
+                        <img class="replace_swatch_collection" loading="lazy"
+                            onclick="changeProductImage('OatmealLinen')" data-swatch-key="OatmealLinen"
+                            data-src="/content/uploads/2024/01/Revive_Cab_BlondeWalnut_Swatch-1024x1024.jpg" />
+                        <span class="tooltiptext">Blonde Walnut</span>
+                    </div>
+                    <div class="tooltip">
+                        <img class="replace_swatch_collection" loading="lazy"
+                            onclick="changeProductImage('SketchLinen')" data-swatch-key="SketchLinen"
+                            data-src="/content/uploads/2024/01/Revive_Cab_AlpineAsh_Swatch-1024x1024.jpg" />
+                        <span class="tooltiptext">Alpine Ash</span>
+                    </div>
+                </div>
+                <p style="margin: 20px 0 0 0;"><strong>Profiles</strong>
+                <div class="icon_section three_col two_col_mobile"
+                    style="margin-top: 0px; padding: 20px; background-color: #ebebeb; display: flex; flex-wrap: wrap; justify-content: center;">
+                    <article class="icon_card">
+                        <img class="side_panels" loading="lazy" data-src="/content/uploads/2023/07/Shaker-1-05.png"
+                            alt="Shaker Door Style" />
+                        <p>Shaker</p>
+                    </article>
 
-                <article class="icon_card">
-                    <img class="side_panels" loading="lazy" data-src="/content/uploads/2023/07/Traditional-3-15.png"
-                        alt="Traditional Door Style" />
-                    <p>Traditional</p>
-                </article>
+                    <article class="icon_card">
+                        <img class="side_panels" loading="lazy" data-src="/content/uploads/2023/07/Thin-Shaker-2-14.png"
+                            alt="Thin Shaker Door Style" />
+                        <p>Thin Shaker</p>
+                    </article>
 
-                <article class="icon_card">
-                    <img class="side_panels" loading="lazy" data-src="/content/uploads/2023/07/Beveled-Rail-4-16.png"
-                        alt="Beveled Rail Door Style" />
-                    <p>Beveled Rail</p>
-                </article>
+                    <article class="icon_card">
+                        <img class="side_panels" loading="lazy" data-src="/content/uploads/2023/07/Traditional-3-15.png"
+                            alt="Traditional Door Style" />
+                        <p>Traditional</p>
+                    </article>
 
-                <article class="icon_card">
-                    <img class="side_panels" loading="lazy"
-                        data-src="/content/uploads/2023/07/Contemporary-Slab-5-17.png"
-                        alt="Contemporary Slab Door Style" />
-                    <p>Contemporary Slab</p>
-                </article>
+                    <article class="icon_card">
+                        <img class="side_panels" loading="lazy"
+                            data-src="/content/uploads/2023/07/Beveled-Rail-4-16.png" alt="Beveled Rail Door Style" />
+                        <p>Beveled Rail</p>
+                    </article>
 
-                <article class="icon_card slab_available_colors" style="background-color: #ebebeb;">
-                    <p><strong>Available Colors</strong></p>
-                    <img class="replace_section_swatch_colors" loading="lazy"
-                        data-src="/content/uploads/2023/07/Available-Colors-17.png" alt="Available Colors for Doors" />
-                </article>
+                    <article class="icon_card">
+                        <img class="side_panels" loading="lazy"
+                            data-src="/content/uploads/2023/07/Contemporary-Slab-5-17.png"
+                            alt="Contemporary Slab Door Style" />
+                        <p>Contemporary Slab</p>
+                    </article>
+                </div>
             </div>
+
 
         </div>
     </section>
@@ -1156,93 +1339,102 @@
             <h2 style="padding-bottom: 20px;"><strong>RE</strong>FRESH</h2>
             <header>
                 <p class="refresh tab_headline">
-                    As one of the most interacted-with elements of a space, hardware plays a huge role in how you
-                    experience your RV interior. Similarly, an updated and on-trend backsplash makes an immediate
-                    impact on the
-                    overall look and feel of your space.
+                    <strong>
+                        As one of the most interacted-with elements of a space, hardware plays a huge role in how you
+                        experience your RV interior. Similarly, an updated and on-trend backsplash makes an immediate
+                        impact on the
+                        overall look and feel of your space.
+                    </strong>
                 </p>
             </header>
 
             <article class="icon_section two_col">
                 <figure class="icon_card">
-                    <img class="icon" loading="lazy" data-src="/content/uploads/2023/07/Quality-Stamp_Green.png"
+                    <img class="icon" loading="lazy" data-src="/content/uploads/2023/07/Quality-Stamp_Green-150x150.png"
                         alt="RV Ready Icon" />
                     <figcaption><strong>RV READY</strong>
-                        <p>Lightweight and designed to match the standard countertop-to-cabinet height</p>
+                        <p>Lightweight and designed to match the standard countertop-to-cabinet height.</p>
                     </figcaption>
                 </figure>
 
                 <figure class="icon_card">
-                    <img class="icon" loading="lazy" data-src="/content/uploads/2021/04/icon-oem.png"
+                    <img class="icon" loading="lazy" data-src="/content/uploads/2021/04/icon-oem-150x150.png"
                         alt="Easy to Install Icon" />
                     <figcaption><strong>EASY TO INSTALL</strong>
-                        <p>Install with adhesive tape or bonding agent – no grout or thinest needed</p>
+                        <p>Install with adhesive tape or bonding agent – no grout or thinset needed.</p>
                     </figcaption>
                 </figure>
             </article>
 
             <div class="product_display_section backsplash_display_section">
                 <aside id="backsplashImageContainer" class="icon_card">
-                    <div class="imagePlaceholder"></div>
+                    <div class="imagePlaceholder">
+                        <div class="lds-ring">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
                 </aside>
 
                 <div class="product_categories">
                     <div class="backsplash_selection" id="backsplashCollections">
                         <strong>Visualize Your REVIVE Design</strong>
                         <p class="select_swatch">Select Your Backsplash:</p>
-                        <ul class="four_col_no_gap">
+                        <ul class="four_col_no_gap backsplash-grid">
                             <li class="tooltip"><img onclick="changeBacksplashImage('SubwayWhiteGrout')"
                                     class="backsplash_collection" data-swatch-key="SubwayWhiteGrout" loading="lazy"
-                                    data-src="/content/uploads/2024/01/Revive_Backsplash_SubwayWhiteGrout_Swatch.jpg"
+                                    data-src="/content/uploads/2024/01/Revive_Backsplash_SubwayWhiteGrout_Swatch-1024x1024.jpg"
                                     alt="White Subway Tile" />
                                 <span class="tooltiptext">White Subway Tile</span>
                                 </button>
                             </li>
                             <li class="tooltip"><img onclick="changeBacksplashImage('GrayMarble')"
                                     data-swatch-key="GrayMarble" class="backsplash_collection" loading="lazy"
-                                    data-src="/content/uploads/2024/01/Revive_Backsplash_GrayMarble_Swatch.jpg"
+                                    data-src="/content/uploads/2024/01/Revive_Backsplash_GrayMarble_Swatch-1024x1024.jpg"
                                     alt="Gray Marble" />
                                 <span class="tooltiptext">Gray Marble</span>
                                 </button>
                             </li>
                             <li class="tooltip"><img onclick="changeBacksplashImage('CoastalBlue')"
                                     data-swatch-key="CoastalBlue" class="backsplash_collection" loading="lazy"
-                                    data-src="/content/uploads/2024/01/Revive_Backsplash_CoastalBlue_Swatch.jpg"
+                                    data-src="/content/uploads/2024/01/Revive_Backsplash_CoastalBlue_Swatch-1024x1024.jpg"
                                     alt="Coastal Blue" />
                                 <span class="tooltiptext">Coastal Blue</span>
                                 </button>
                             </li>
                             <li class="tooltip"><img onclick="changeBacksplashImage('HexWood')"
                                     data-swatch-key="HexWood" class="backsplash_collection" loading="lazy"
-                                    data-src="/content/uploads/2024/01/Revive_Backsplash_HexWood_Swatch.jpg"
+                                    data-src="/content/uploads/2024/01/Revive_Backsplash_HexWood_Swatch-1024x1024.jpg"
                                     alt="Hex Wood" />
                                 <span class="tooltiptext">Hex Wood</span>
                                 </button>
                             </li>
                             <li class="tooltip"><img onclick="changeBacksplashImage('WhitePickett')"
                                     data-swatch-key="WhitePickett" class="backsplash_collection" loading="lazy"
-                                    data-src="/content/uploads/2024/01/Revive_Backsplash_WhitePickett_Swatch.jpg"
-                                    alt="White Pickett" />
-                                <span class="tooltiptext">White Pickett</span>
+                                    data-src="/content/uploads/2024/01/Revive_Backsplash_WhitePickett_Swatch-1024x1024.jpg"
+                                    alt="White Picket" />
+                                <span class="tooltiptext">White Picket</span>
                                 </button>
                             </li>
                             <li class="tooltip"><img onclick="changeBacksplashImage('ToastedMarshmallow')"
                                     data-swatch-key="ToastedMarshmallow" class="backsplash_collection" loading="lazy"
-                                    data-src="/content/uploads/2024/01/Revive_Backsplash_ToastedMarshmallow_Swatch.jpg"
+                                    data-src="/content/uploads/2024/01/Revive_Backsplash_ToastedMarshmallow_Swatch-1024x1024.jpg"
                                     alt="Toasted Marshmallow" />
                                 <span class="tooltiptext">Toasted Marshmallow</span>
                                 </button>
                             </li>
                             <li class="tooltip"><img onclick="changeBacksplashImage('AgedStone')"
                                     data-swatch-key="AgedStone" class="backsplash_collection" loading="lazy"
-                                    data-src="/content/uploads/2024/01/Revive_Backsplash_AgedStone_Swatch.jpg"
+                                    data-src="/content/uploads/2024/01/Revive_Backsplash_AgedStone_Swatch-1024x1024.jpg"
                                     alt="Aged Stone" />
                                 <span class="tooltiptext">Aged Stone</span>
                                 </button>
                             </li>
                             <li class="tooltip"><img onclick="changeBacksplashImage('OliveClayPicket')"
                                     data-swatch-key="OliveClayPicket" class="backsplash_collection" loading="lazy"
-                                    data-src="/content/uploads/2024/01/Revive_Backsplash_OliveClayPicket_Swatch.jpg"
+                                    data-src="/content/uploads/2024/01/Revive_Backsplash_OliveClayPicket_Swatch-1024x1024.jpg"
                                     alt="Olive Clay Picket" />
                                 <span class="tooltiptext">Olive Clay Picket</span>
                                 </button>
@@ -1251,81 +1443,82 @@
                     </div>
                 </div>
             </div>
-            <br>
-            <p><strong>Hardware</strong></p>
-            <!-- <p><strong>Collections</strong></p> -->
+            <br />
+            <h3 style="padding-top: 30px;"><strong>Hardware</strong></h3>
+            <p style="margin-bottom: 0px;"><strong>Collections</strong></p>
             <div class="hardware-grid-container">
                 <div class="hardware-grid-item">
                     <img class="hardware-grid-img" loading="lazy"
-                        data-src="/content/uploads/2024/01/Revive_Hardware_Acadia_PolishedChrome.jpg"
+                        data-src="/content/uploads/2024/01/Revive_Hardware_Acadia_PolishedChrome-1024x1024.jpg"
                         alt="Acadia Polished Chrome" title="Acadia Polished Chrome">
                     <p class="hardware-label">Acadia</p>
                 </div>
                 <div class="hardware-grid-item">
                     <img class="hardware-grid-img" loading="lazy"
-                        data-src="/content/uploads/2024/01/Revive_Hardware_Arches_PolishedChrome.jpg"
+                        data-src="/content/uploads/2024/01/Revive_Hardware_Arches_PolishedChrome-1024x1024.jpg"
                         alt="Arches Polished Chrome" title="Arches Polished Chrome">
                     <p class="hardware-label">Arches</p>
                 </div>
                 <div class="hardware-grid-item">
                     <img class="hardware-grid-img" loading="lazy"
-                        data-src="/content/uploads/2024/01/Revive_Hardware_Rainier_PolishedChrome.jpg"
+                        data-src="/content/uploads/2024/01/Revive_Hardware_Rainier_PolishedChrome-1024x1024.jpg"
                         alt="Rainier Polished Chrome" title="Rainier Polished Chrome">
                     <p class="hardware-label">Rainier</p>
                 </div>
                 <div class="hardware-grid-item">
                     <img class="hardware-grid-img" loading="lazy"
-                        data-src="/content/uploads/2024/01/Revive_Hardware_Sequoia_PolishedChrome.jpg"
+                        data-src="/content/uploads/2024/01/Revive_Hardware_Sequoia_PolishedChrome-1024x1024.jpg"
                         alt="Sequoia Polished Chrome" title="Sequoia Polished Chrome">
                     <p class="hardware-label">Sequoia</p>
                 </div>
                 <div class="hardware-grid-item">
                     <img class="hardware-grid-img" loading="lazy"
-                        data-src="/content/uploads/2024/01/Revive_Hardware_Sedona_PolishedChrome.jpg"
+                        data-src="/content/uploads/2024/01/Revive_Hardware_Sedona_PolishedChrome-1024x1024.jpg"
                         alt="Sedona Polished Chrome" title="Sedona Polished Chrome">
                     <p class="hardware-label">Sedona</p>
                 </div>
                 <div class="hardware-grid-item">
                     <img class="hardware-grid-img" loading="lazy"
-                        data-src="/content/uploads/2024/01/Revive_Hardware_Tahoe_PolishedChrome.jpg"
+                        data-src="/content/uploads/2024/01/Revive_Hardware_Tahoe_PolishedChrome-1024x1024.jpg"
                         alt="Tahoe Polished Chrome" title="Tahoe Polished Chrome">
                     <p class="hardware-label">Tahoe</p>
                 </div>
                 <div class="hardware-grid-item">
                     <img class="hardware-grid-img" loading="lazy"
-                        data-src="/content/uploads/2024/01/Revive_Hardware_KnobSquare_PolishedChrome.jpg"
+                        data-src="/content/uploads/2024/01/Revive_Hardware_KnobSquare_PolishedChrome-1024x1024.jpg"
                         alt="Square Knob Polished Chrome" title="Square Knob Polished Chrome">
                     <p class="hardware-label center-label">Square Knob</p>
                 </div>
                 <div class="hardware-grid-item">
                     <img class="hardware-grid-img" loading="lazy"
-                        data-src="/content/uploads/2024/01/Revive_Hardware_KnobRound_PolishedChrome.jpg"
+                        data-src="/content/uploads/2024/01/Revive_Hardware_KnobRound_PolishedChrome-1024x1024.jpg"
                         alt="Round Knob Polished Chrome" title="Round Knob Polished Chrome">
                     <p class="hardware-label center-label">Round Knob</p>
                 </div>
             </div>
+            <p style="margin-bottom: 0px; padding-top: 20px;"><strong>Finishes</strong></p>
             <div class="hardware-grid-container">
                 <div class="hardware-grid-item">
                     <img class="hardware-grid-img" loading="lazy"
-                        data-src="/content/uploads/2024/01/Revive_Hardware_KnobRound_AntiqueBronze.jpg"
+                        data-src="/content/uploads/2024/01/Revive_Hardware_KnobRound_AntiqueBronze-1024x1024.jpg"
                         alt="Antique Bronze" title="Antique Bronze">
                     <p class="hardware-label center-label">Antique Bronze</p>
                 </div>
                 <div class="hardware-grid-item">
                     <img class="hardware-grid-img" loading="lazy"
-                        data-src="/content/uploads/2024/01/Revive_Hardware_KnobRound_GoldSatin.jpg" alt="Gold Satin"
-                        title="Gold Satin">
+                        data-src="/content/uploads/2024/01/Revive_Hardware_KnobRound_GoldSatin-1024x1024.jpg"
+                        alt="Gold Satin" title="Gold Satin">
                     <p class="hardware-label center-label">Gold Satin</p>
                 </div>
                 <div class="hardware-grid-item">
                     <img class="hardware-grid-img" loading="lazy"
-                        data-src="/content/uploads/2024/01/Revive_Hardware_KnobRound_MatteBlack.jpg" alt="Matte Black"
-                        title="Matte Black">
+                        data-src="/content/uploads/2024/01/Revive_Hardware_KnobRound_MatteBlack-1024x1024.jpg"
+                        alt="Matte Black" title="Matte Black">
                     <p class="hardware-label center-label">Matte Black</p>
                 </div>
                 <div class="hardware-grid-item">
                     <img class="hardware-grid-img" loading="lazy"
-                        data-src="/content/uploads/2024/01/Revive_Hardware_KnobRound_PolishedChrome.jpg"
+                        data-src="/content/uploads/2024/01/Revive_Hardware_KnobRound_PolishedChrome-1024x1024.jpg"
                         alt="Polished Chrome" title="Polished Chrome">
                     <p class="hardware-label center-label">Polished Chrome</p>
                 </div>
@@ -1334,37 +1527,37 @@
 
     </section>
 
-    <div class="page-divider"></div>
-    <section id="where-to-buy">
+    <!-- <div class="page-divider"></div> -->
+    <!-- <section id="where-to-buy">
         <div class="max-width">
             <header>
                 <h2 class="where_to_buy tab_headline">Where to Buy</h2>
                 <p>Find us at these exclusive distributors</p>
             </header>
-            <nav class="icon_section four_col four_col_where">
+            <nav class="icon_section four_col four_col_where two_col_mobile">
                 <figure class="icon_card">
-                    <img class="icon" loading="lazy" data-src="/content/uploads/2023/07/Swatch_Green.png"
+                    <img class="icon" loading="lazy" data-src="/content/uploads/2023/07/Swatch_Green-150x150.png"
                         alt="Icon Description" />
                     <figcaption>
                         <a class="where_to_buy_btn" href="#">Partner #1</a>
                     </figcaption>
                 </figure>
                 <figure class="icon_card">
-                    <img class="icon" loading="lazy" data-src="/content/uploads/2023/07/Revive-Installation_Green.png"
+                    <img class="icon" loading="lazy" data-src="/content/uploads/2023/07/Revive-Installation_Green-150x150.png"
                         alt="Icon Description" />
                     <figcaption>
                         <a class="where_to_buy_btn" href="#">Partner #2</a>
                     </figcaption>
                 </figure>
                 <figure class="icon_card">
-                    <img class="icon" loading="lazy" data-src="/content/uploads/2021/04/icon-oem.png"
+                    <img class="icon" loading="lazy" data-src="/content/uploads/2021/04/icon-oem-150x150.png"
                         alt="Icon Description" />
                     <figcaption>
                         <a class="where_to_buy_btn" href="#">Partner #3</a>
                     </figcaption>
                 </figure>
                 <figure class="icon_card">
-                    <img class="icon" loading="lazy" data-src="/content/uploads/2023/07/Quality-Stamp_Green.png"
+                    <img class="icon" loading="lazy" data-src="/content/uploads/2023/07/Quality-Stamp_Green-150x150.png"
                         alt="Icon Description" />
                     <figcaption>
                         <a class="where_to_buy_btn" href="#">Partner #4</a>
@@ -1372,16 +1565,16 @@
                 </figure>
             </nav>
         </div>
-    </section>
+    </section> -->
 
 </div>
 </body>
 <script>
     // DROPDOWN LOGIC //
     const collections = {
-        cabinet: ['Cabinet Wood Collection', 'Cabinet Smooth Collection'],
         wallboard: ['Wallboard Linen Collection', 'Wallboard Specialty Collection'],
-        ceiling: ['Ceiling Textured Collection']
+        ceiling: ['Ceiling Textured Collection'],
+        cabinet: ['Cabinet Wood Collection', 'Cabinet Smooth Collection'],
     };
 
     function updateCollectionDropdown(kit) {
@@ -1390,8 +1583,12 @@
 
         collections[kit].forEach((collection) => {
             const option = document.createElement('option');
+
+            const collection_split = collection.split(" ")
+            const collection_length = collection_split.length
+            const new_collection_name = collection_split.filter((txt, idx) => idx !== 0 && idx !== collection_length - 1)
             option.value = collection.toLowerCase().replace(/\s+/g, '_');
-            option.textContent = collection;
+            option.textContent = new_collection_name
             collectionDropdown.appendChild(option);
         });
 
@@ -1456,108 +1653,108 @@
 
     document.addEventListener('DOMContentLoaded', function () {
         const kitDropdown = document.getElementById('kitDropdown');
-        kitDropdown.value = 'cabinet';
+        kitDropdown.value = 'wallboard';
         handleKitChange(kitDropdown.value);
     });
 
     // CAROUSEL LOGIC //
     const swatchToImagesMap = {
         cabBirchBark: [
-            "/content/uploads/2024/01/Revive_Cab_BirchBrak.jpg",
-            // "/content/uploads/2024/01/Revive_Cab_BirchBark_Limbo.jpg"
+            "/content/uploads/2024/01/Revive_Cab_BirchBrak-1024x1024.jpg",
+            // "/content/uploads/2024/01/Revive_Cab_BirchBark_Limbo-1024x1024.jpg"
         ],
         cabBlondeWalnut: [
-            "/content/uploads/2024/01/Revive_Cab_BlondeWalnut.jpg",
-            // "/content/uploads/2024/01/Revive_Cab_BlondeWalnut_Limbo.jpg"
+            "/content/uploads/2024/01/Revive_Cab_BlondeWalnut-1024x1024.jpg",
+            // "/content/uploads/2024/01/Revive_Cab_BlondeWalnut_Limbo-1024x1024.jpg"
         ],
         cabGreenOak: [
-            "/content/uploads/2024/01/Revive_Cab_GreenOak.jpg",
-            // "/content/uploads/2024/01/Revive_Cab_GreenOak_Limbo.jpg"
+            "/content/uploads/2024/01/Revive_Cab_GreenOak-1024x1024.jpg",
+            // "/content/uploads/2024/01/Revive_Cab_GreenOak_Limbo-1024x1024.jpg"
         ],
         cabAlpineAsh: [
-            "/content/uploads/2024/01/Revive_Cab_AlpineAsh.jpg",
-            // "/content/uploads/2024/01/Revive_Cab_AlpineAsh_Limbo_Limbo.jpg"
+            "/content/uploads/2024/01/Revive_Cab_AlpineAsh-1024x1024.jpg",
+            // "/content/uploads/2024/01/Revive_Cab_AlpineAsh_Limbo_Limbo-1024x1024.jpg"
         ],
         cabDesginerWhite: [
-            "/content/uploads/2024/01/Revive_Cab_DesignerWhite.jpg",
-            // "/content/uploads/2024/01/Revive_Cab_DesignerWhite_Limbo.jpg"
+            "/content/uploads/2024/01/Revive_Cab_DesignerWhite-1024x1024.jpg",
+            // "/content/uploads/2024/01/Revive_Cab_DesignerWhite_Limbo-1024x1024.jpg"
         ],
         cabStoneGray: [
-            "/content/uploads/2024/01/Revive_Cab_StoneGray.jpg",
-            // "/content/uploads/2024/01/Revive_Cab_StoneGray_Limbo.jpg"
+            "/content/uploads/2024/01/Revive_Cab_StoneGray-1024x1024.jpg",
+            // "/content/uploads/2024/01/Revive_Cab_StoneGray_Limbo-1024x1024.jpg"
         ],
         cabMidnightBlue: [
-            "/content/uploads/2024/01/Revive_Cab_MidnightBlue.jpg",
-            // "/content/uploads/2024/01/Revive_Cab_MidnightBlue_Limbo.jpg"
+            "/content/uploads/2024/01/Revive_Cab_MidnightBlue-1024x1024.jpg",
+            // "/content/uploads/2024/01/Revive_Cab_MidnightBlue_Limbo-1024x1024.jpg"
         ],
         cabMatteBlack: [
-            "/content/uploads/2024/01/Revive_Cab_MatteBlk.jpg",
-            // "/content/uploads/2024/01/Revive_Cab_MatteBlack_Limbo.jpg"
+            "/content/uploads/2024/01/Revive_Cab_MatteBlk-1024x1024.jpg",
+            // "/content/uploads/2024/01/Revive_Cab_MatteBlack_Limbo-1024x1024.jpg"
         ],
 
         CrispLinen: [
-            "/content/uploads/2024/01/Revive_Wall_CrispLinen.jpg",
+            "/content/uploads/2024/01/Revive_Wall_CrispLinen-1024x1024.jpg",
         ],
         OrganicLinen: [
-            "/content/uploads/2024/01/Revive_Wall_OrganicLinen.jpg",
+            "/content/uploads/2024/01/Revive_Wall_OrganicLinen-1024x1024.jpg",
         ],
         GeoLinen: [
-            "/content/uploads/2024/01/Revive_Wall_GeoLinen.jpg",
+            "/content/uploads/2024/01/Revive_Wall_GeoLinen-1024x1024.jpg",
         ],
         OatmealLinen: [
-            "/content/uploads/2024/01/Revive_Wall_OatmealLinen.jpg",
+            "/content/uploads/2024/01/Revive_Wall_OatmealLinen-1024x1024.jpg",
         ],
         SketchLinen: [
-            "/content/uploads/2024/01/Revive_Wall_SketchLinen.jpg",
+            "/content/uploads/2024/01/Revive_Wall_SketchLinen-1024x1024.jpg",
         ],
         StructuredLinen: [
-            "/content/uploads/2024/01/Revive_Wall_StructuredLinen.jpg",
+            "/content/uploads/2024/01/Revive_Wall_StructuredLinen-1024x1024.jpg",
         ],
         GrayCrossway: [
-            "/content/uploads/2024/01/Revive_Wall_GrayCrossway.jpg",
+            "/content/uploads/2024/01/Revive_Wall_GrayCrossway-1024x1024.jpg",
         ],
         SilverPrisim: [
-            "/content/uploads/2024/01/Revive_Wall_SilverPrisim.jpg",
+            "/content/uploads/2024/01/Revive_Wall_SilverPrisim-1024x1024.jpg",
         ],
         WhitewashPlankedWood: [
-            "/content/uploads/2024/01/Revive_Wall_WhitewashPlankedWood.jpg",
+            "/content/uploads/2024/01/Revive_Wall_WhitewashPlankedWood-1024x1024.jpg",
         ],
         CharcoalDiamond: [
-            "/content/uploads/2024/01/Revive_Wall_CharcoalDiamond.jpg",
+            "/content/uploads/2024/01/Revive_Wall_CharcoalDiamond-1024x1024.jpg",
         ],
 
         PebbledWhite: [
-            "/content/uploads/2024/01/Revive_Ceiling_PebbledWhite.jpg"
+            "/content/uploads/2024/01/Revive_Ceiling_PebbledWhite-1024x1024.jpg"
         ],
         ArcticWhite: [
-            "/content/uploads/2024/01/Revive_Ceiling_ArcticWhite_Kitchen2.jpg"
+            "/content/uploads/2024/01/Revive_Ceiling_ArcticWhite_Kitchen2-1024x1024.jpg"
         ],
     };
 
     const backsplashImagesMap = {
         SubwayWhiteGrout: [
-            "/content/uploads/2024/01/Revive_BackSplash_SubwayWhiteGrout.jpg",
+            "/content/uploads/2024/01/Revive_BackSplash_SubwayWhiteGrout-1024x1024.jpg",
         ],
         GrayMarble: [
-            "/content/uploads/2024/01/Revive_BackSplash_GrayMarble.jpg",
+            "/content/uploads/2024/01/Revive_BackSplash_GrayMarble-1024x1024.jpg",
         ],
         CoastalBlue: [
-            "/content/uploads/2024/01/Revive_BackSplash_CoastalBlue.jpg",
+            "/content/uploads/2024/01/Revive_BackSplash_CoastalBlue-1024x1024.jpg",
         ],
         HexWood: [
-            "/content/uploads/2024/01/Revive_BackSplash_HexWood.jpg",
+            "/content/uploads/2024/01/Revive_BackSplash_HexWood-1024x1024.jpg",
         ],
         WhitePickett: [
-            "/content/uploads/2024/01/Revive_Backsplash_WhitePickett.jpg",
+            "/content/uploads/2024/01/Revive_Backsplash_WhitePickett-1024x1024.jpg",
         ],
         ToastedMarshmallow: [
-            "/content/uploads/2024/01/Revive_Backsplash_ToastedMarshmallow.jpg",
+            "/content/uploads/2024/01/Revive_Backsplash_ToastedMarshmallow-1024x1024.jpg",
         ],
         AgedStone: [
-            "/content/uploads/2024/01/Revive_Backsplash_AgedStone.jpg",
+            "/content/uploads/2024/01/Revive_Backsplash_AgedStone-1024x1024.jpg",
         ],
         OliveClayPicket: [
-            "/content/uploads/2024/01/Revive_Backsplash_OlivePickett.jpg",
+            "/content/uploads/2024/01/Revive_Backsplash_OlivePickett-1024x1024.jpg",
         ],
     };
 
@@ -1715,20 +1912,16 @@
         items[activeIndex].classList.add('active');
     }
 
+
+    let staticTop = 55
+
     // STICKY NAV //
     document.addEventListener('DOMContentLoaded', () => {
         const nav = document.querySelector('#gc_im .gm_im_sticky-nav');
         const reface_container = document.querySelector('#gc_im');
         const navPlaceholder = document.querySelector('#gc_im .nav-placeholder');
         const navLinks = document.querySelectorAll('#gc_im .nav-link');
-        const initialTop = reface_container.offsetTop - 55;
-        const refaceContainerTop = reface_container.offsetTop; // Distance from the top of the offset parent
-        const refaceContainerHeight = reface_container.clientHeight; // Height of the reface_container
-
-        // The position of the bottom of the reface_container relative to its offset parent
-        const refaceContainerBottom = refaceContainerTop + refaceContainerHeight;
-
-
+        // const initialTop = reface_container.offsetTop - staticTop;
 
         function adjustNavPlaceholderHeight() {
             if (nav.classList.contains('fixed-nav')) {
@@ -1738,16 +1931,31 @@
             }
         }
 
+        let initialTop = reface_container.offsetTop - staticTop;
+
+        function recalculateInitialTop() {
+            if (window.innerWidth <= 1024) {
+                staticTop = 102
+            } else {
+                staticTop = 55
+            }
+            initialTop = reface_container.offsetTop - staticTop;
+        }
+
         function toggleStickyNav() {
             const fromTop = window.scrollY;
 
-            if (fromTop >= initialTop && fromTop < refaceContainerBottom) {
+            if (fromTop >= initialTop) {
                 nav.classList.add('fixed-nav');
             } else {
                 nav.classList.remove('fixed-nav');
             }
             adjustNavPlaceholderHeight();
         }
+
+        window.addEventListener('resize', recalculateInitialTop);
+        window.addEventListener('orientationchange', recalculateInitialTop);
+        window.addEventListener("DOMContentLoaded", recalculateInitialTop);
 
         function highlightLink() {
             let currentSection = '';
@@ -1775,14 +1983,16 @@
                 e.preventDefault();
                 if (!nav.classList.contains("fixed-nav")) nav.classList.add('fixed-nav');
                 const targetSection = document.querySelector(this.getAttribute('href'));
-                const fromTop = targetSection.offsetTop + window.innerHeight - nav.offsetHeight
+                const sectionTop = targetSection.getBoundingClientRect().top;
+                const offsetPosition = sectionTop + window.pageYOffset - nav.offsetHeight - staticTop - 60;
 
                 window.scrollTo({
-                    top: fromTop,
+                    top: offsetPosition,
                     behavior: 'smooth'
                 });
             });
         });
+
 
         window.addEventListener('scroll', () => {
             toggleStickyNav();
