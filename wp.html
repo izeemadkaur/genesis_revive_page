@@ -1577,7 +1577,101 @@
     </section> -->
 
 </div>
+
+
+<style>
+    .gcmodal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .gcmodal-content {
+        position: relative;
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 50px;
+        border: 1px solid #888;
+        width: 60%;
+        max-width: 960px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        animation-name: animatetop;
+        animation-duration: 0.4s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: fit-content;
+        border-radius: 10px;
+    }
+
+    .close {
+        color: #aaa;
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+    }
+
+    .gcmodal-content iframe {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+
+    @media screen and (max-width: 700px) {
+        .gcmodal-content {
+            width: 90%;
+            margin: 20% auto;
+        }
+    }
+</style>
+
+
+<div id="gcModal" class="gcmodal">
+    <div class="gcmodal-content">
+        <span class="close">&times;</span>
+        <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/E5gd68v2urg" frameborder="0"
+            allowfullscreen></iframe>
+    </div>
+</div>
+
 </body>
+
+<script>
+    // MODAL LOGIC
+    document.getElementById('videoLink').onclick = function () {
+        var gcmodal = document.getElementById('gcModal');
+        var span = document.getElementsByClassName("close")[0];
+
+        gcmodal.style.display = "flex";
+
+        span.onclick = function () {
+            gcmodal.style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            if (event.target == gcmodal) {
+                gcmodal.style.display = "none";
+            }
+        }
+    }
+</script>
+
+
 <script>
     // DROPDOWN LOGIC //
     const collections = {
